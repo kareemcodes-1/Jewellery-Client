@@ -11,8 +11,7 @@ const NewestProducts = () => {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
-        },
-        credentials: "include",
+        }
        }).then((res) => res.json())
        .then((data) => setProducts(data))
        .catch((err) => console.log(err));
