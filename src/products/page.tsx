@@ -17,7 +17,7 @@ const ProductDetails = () => {
     useEffect(() => {
         (async function (){
          try {
-             const res = await fetch(`/api/products/product/${id}`);
+             const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/products/product/${id}`);
              const data = await res.json();
              setProductDetails(data);
          } catch (error) {

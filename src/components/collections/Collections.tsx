@@ -7,7 +7,7 @@ const Collections = () => {
   const {collections, setCollections} = useStore();
 
   useEffect(() => {
-     fetch('/api/collections', {
+     fetch(`${import.meta.env.VITE_SERVER_URL}/api/collections`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',

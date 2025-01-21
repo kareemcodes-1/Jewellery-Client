@@ -7,7 +7,7 @@ import ProductSwiper from "../swipers/ProductSwiper";
 const NewestProducts = () => {
   const {products, setProducts} = useStore();
   useEffect(() => {
-       fetch('/api/products', {
+       fetch(`${import.meta.env.VITE_SERVER_URL}/api/products`, {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
