@@ -21,7 +21,7 @@ const Collections = () => {
     <div className="lg:grid grid-cols-2">
       {collections.map((collection: Collection) => (
         <a
-          href={`${import.meta.env.VITE_SERVER_URL}/collections/${collection._id}`}
+          href={`/collections/${collection._id}`}
           key={collection._id}
           className="relative ginger"
         >

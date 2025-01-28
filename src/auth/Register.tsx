@@ -5,6 +5,7 @@ import { useFormStatus } from 'react-dom';
 import Loading from '../components/loading';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
+import toast from 'react-hot-toast';
 
 const SubmitBtn = () => {
   const {pending} = useFormStatus();
@@ -16,7 +17,23 @@ const Register = () => {
 
     const {setUserInfo} = useStore();
 
-    const formAction = async (formData: any) => {
+    const formAction = async (formData: FormData) => {
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const password = formData.get('password');
+
+      if(!name || !email || !password){
+          if(!name){
+          toast.error('Name is required');
+          }
+          if(!email){
+              toast.error('Email is required');
+          }
+          if(!password){
+            toast.error('Password is required');
+        }
+        return;
+      }
         try {
             const userData = {
                 name: formData.get('name'),
@@ -30,6 +47,7 @@ const Register = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(userData),
+                credentials: "include",
             });
 
             const data = await res.json();
@@ -38,7 +56,7 @@ const Register = () => {
                 setUserInfo(data);
                 navigate('/');
             }else{
-                alert('Something went wrong');
+              toast.error('Something wrong, try again.')
             }
         } catch (error) {
             console.log(error);
@@ -109,10 +127,10 @@ const Register = () => {
         </div>
       </form>
 
-      <p className="mt-10 text-center text-sm text-gray-500">
+      <p className="mt-10 text-center text-sm text-gray-500 uppercase">
       Already have an account?{' '}
         <a
-          href="/auth/login"
+          href="/login"
           className="font-semibold text-black underline"
         >
           Sign in

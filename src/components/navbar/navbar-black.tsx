@@ -7,19 +7,18 @@ import { useStore } from "../../store/store";
 import SearchModal from "../modals/SearchModal";
 import CartModal from "../modals/CartModal";
 import MenuModal from "../modals/MenuModal";
+import { Link } from "react-router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function NavbarHome() {
-
-  const [openCartModal, setOpenCartModal] = useState<boolean>(false);
     const [openSearchModal, setOpenSearchModal] = useState<boolean>(false);
     const [openMenuModal, setOpenMenuModal] = useState<boolean>(false);
-    const {cart} = useStore();
+    const {cart, openCartModal, setOpenCartModal, userInfo} = useStore();
 
   return (
     <>
-      {openCartModal && <CartModal openCartModal={openCartModal} closeCartModal={() => setOpenCartModal(false)} />}
+      {openCartModal && <CartModal  />}
       {openSearchModal && <SearchModal openSearchModal={openSearchModal} closeSearchModal={() => setOpenSearchModal(false)} />}
       {openMenuModal && <MenuModal openMenuModal={openMenuModal} closeMenuModal={() => setOpenMenuModal(false)} />}
       <header
@@ -65,8 +64,9 @@ export default function NavbarHome() {
               <div onClick={() => setOpenSearchModal(true)} className="lg:block hidden search cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
                 SEARCH
               </div>
-              <a href={"/wishlist"} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
-                ACCOUNT
+
+              <a className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+                {userInfo ? 'ACCOUNT' : <Link to={'/login'}>LOGIN</Link>}
               </a>
 
 

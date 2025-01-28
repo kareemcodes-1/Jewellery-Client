@@ -55,7 +55,7 @@ export default function HomePage() {
             </div>
           </div>
         </div> */}
-        <div className="absolute bottom-[0rem] lg:left-[10rem] right-[1rem]">
+        <div className="absolute lg:bottom-[0rem] bottom-[1rem] lg:left-[10rem] right-[1rem]">
             <div className="flex flex-col items-end justify-end w-full">
               {/* <a
                 href="/listings"

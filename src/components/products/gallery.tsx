@@ -11,7 +11,7 @@ const Gallery = ({
   const [mainImage, setMainImage] = useState(productMedia[0]);
 
   return (
-    <div className="lg:w-[50%] flex flex-col gap-3 relative">
+    <div className="lg:w-[50%] w-full flex flex-col gap-3 relative">
 
       <img
         src={mainImage}

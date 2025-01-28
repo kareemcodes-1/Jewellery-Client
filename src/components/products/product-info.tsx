@@ -38,7 +38,7 @@ const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
 
 
   return (
-    <div className="flex flex-col gap-4 lg:w-[50%]">
+    <div className="flex flex-col gap-4 lg:w-[50%] w-full">
       <div className="flex justify-between items-center gap-[1rem]">
         <h2 className=" text-[1.5rem] font-semibold text-black manrope uppercase tracking-[.2rem]">{productInfo.name}</h2>
         {/* <HeartFavorite product={productInfo} /> */}
@@ -117,14 +117,14 @@ const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
         onClick={() => handleAddToCart()}
           className="outline text-[.8rem] font-bold uppercase tracking-[.4rem] py-3 rounded-lg bg-black text-white"
         >
-          Add To Basket
+          Add To Cart
         </button>
       ) : (
         <button
           className="cursor-not-allowed outline font-bold uppercase py-3 rounded-lg bg-black text-white opacity-[.8]"
           aria-disabled
         >
-          Add To Basket
+          Add To Cart
         </button>
       )}
     </div>

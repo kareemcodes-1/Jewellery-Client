@@ -3,30 +3,47 @@ import { useStore } from "../../store/store";
 import CheckoutBtn from "../checkout-btn";
 import toast from "react-hot-toast";
 import { Trash } from "lucide-react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-const CartModal = ({
-  closeCartModal,
-  openCartModal,
-}: {
-  closeCartModal: () => void;
-  openCartModal: boolean;
-}) => {
-  const { cart, incrementQuantity, decrementQuantity, totalAmount, deleteCartItem, deleteAllCartItems } = useStore();
+const CartModal = () => {
+  const { cart, incrementQuantity, decrementQuantity, totalAmount, deleteCartItem, deleteAllCartItems, openCartModal, setOpenCartModal } = useStore();
+
+  const ref = useRef<HTMLDivElement | null>(null);
+  
+  useEffect(() => {
+    console.log("openCartModal:", openCartModal);
+    const modal = ref.current;
+  
+    if (openCartModal && modal) {
+      // Open animation
+      gsap.fromTo(
+        modal,
+        { x: "100%" },
+        { x: 0, duration: 0.7, ease: "power3.inOut" }
+      );
+    }  else if (!openCartModal && modal) {
+      // Close animation
+      gsap.to(modal, {
+        x: "100%",
+        duration: 0.5,
+        ease: "power3.inOut",
+      });
+    }
+  }, [openCartModal]);
   
 
   return createPortal(
-    <div
-      className={`fixed top-0 right-0 h-screen lg:w-[40%] w-full bg-white shadow-lg z-[1000] transform transition-transform duration-300 ${
-        openCartModal ? "translate-x-0" : "translate-x-full"
-      }`}
+    <div ref={ref}
+      className={`fixed top-0 right-0 h-screen lg:w-[40%] w-full bg-white shadow-lg z-[1000]`}
     >
       <div className="flex h-full">
 
         <div className="w-full h-full sticky top-0">
-          <h1 className="text-[1rem] p-[1rem] manrope font-semibold tracking-[.1rem]">YOUR BASKET</h1>
+          <h1 className="text-[1.2rem] p-[1rem] manrope font-semibold tracking-[.1rem]">BASKET</h1>
           <div
-            className="absolute right-[1rem] top-[1rem] text-[1rem] font-semibold cursor-pointer manrope uppercase tracking-[.3rem]"
-            onClick={closeCartModal}
+            className="absolute right-[1rem] top-[1rem] text-[1.2rem] font-semibold cursor-pointer manrope uppercase tracking-[.1rem]"
+            onClick={() => setOpenCartModal(false)}
           >
             Close
           </div>
@@ -51,14 +68,14 @@ const CartModal = ({
                 <div className="flex items-center gap-[.5rem]">
                 <div className="rounded-[1rem] flex items-center justify-center w-[4rem] gap-[.5rem] p-[.5rem] h-[2.2rem]  ">
                   <button
-                    className="text-[1.5rem] azert-mono font-light"
+                    className="text-[1.5rem] manrope font-light"
                     onClick={() => decrementQuantity(item.product._id)}
                   >
                     -
                   </button>
-                  <div className="text-[1.2rem]">{item.quantity}</div>
+                  <div className="text-[1rem]">{item.quantity}</div>
                   <button
-                    className="text-[1.5rem] azert-mono font-light"
+                    className="text-[1.5rem] manrope font-light"
                     onClick={() => incrementQuantity(item.product._id)}
                   >
                     +

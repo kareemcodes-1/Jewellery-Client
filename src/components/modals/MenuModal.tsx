@@ -1,4 +1,6 @@
 
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 
@@ -9,6 +11,29 @@ const MenuModal = ({
   closeMenuModal: () => void;
   openMenuModal: boolean;
 }) => {
+
+  const ref = useRef<HTMLDivElement | null>(null);
+  
+  useEffect(() => {
+    console.log("openMenuModal:", openMenuModal);
+    const modal = ref.current;
+  
+    if (openMenuModal && modal) {
+      // Open animation
+      gsap.fromTo(
+        modal,
+        { x: "-100%" },
+        { x: 0, duration: 0.7, ease: "power3.inOut" }
+      );
+    }  else if (!openMenuModal && modal) {
+      // Close animation
+      gsap.to(modal, {
+        x: "-100%",
+        duration: 0.5,
+        ease: "power3.inOut",
+      });
+    }
+  }, [openMenuModal]);
 
     // useEffect(() => {
     //     if(openMenuModal){
@@ -23,10 +48,9 @@ const MenuModal = ({
     // }, [openMenuModal]);
 
   return createPortal(
-    <div
-      className={`fixed top-0 left-0 h-screen lg:w-[50%] w-full bg-white shadow-lg z-[1000] transform transition-transform duration-300 ${
-        openMenuModal ? "translate-x-0" : "translate-x-full"
-      }`}
+    <div 
+    ref={ref}
+      className={`fixed top-0 left-0 h-screen lg:w-[50%] w-full bg-white shadow-lg z-[1000]`}
     >
       <div className="">
           <div
@@ -50,7 +74,7 @@ const MenuModal = ({
           </ul>
       </div>
 
-       <img src="/fun.webp" alt="" className="lg:block hidden h-[30rem] justify-end self-end"/>
+       <img src="https://i.pinimg.com/736x/42/69/6b/42696bf2c8088eebcae27e49b825a519.jpg" alt="" className="lg:block hidden h-[30rem] justify-end self-end"/>
       </div>
     </div>,
     document.body

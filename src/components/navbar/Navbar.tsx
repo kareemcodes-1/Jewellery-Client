@@ -5,15 +5,14 @@ import CartModal from "../modals/CartModal";
 import SearchModal from "../modals/SearchModal";
 import MenuModal from "../modals/MenuModal";
 import { useStore } from "../../store/store";
+import { Link } from "react-router";
 
 
 export default function NavbarHome() {
-
-  const [openCartModal, setOpenCartModal] = useState<boolean>(false);
   const [openSearchModal, setOpenSearchModal] = useState<boolean>(false);
   const [openMenuModal, setOpenMenuModal] = useState<boolean>(false);
   const [addBlackNav, setAddBlackNav] = useState<boolean>(false);
-  const {cart, userInfo} = useStore();
+  const {cart, userInfo, openCartModal, setOpenCartModal} = useStore();
 
   // console.log(document.documentElement.scrollTop)
 
@@ -37,7 +36,7 @@ export default function NavbarHome() {
 
   return (
     <>
-      {openCartModal && <CartModal openCartModal={openCartModal} closeCartModal={() => setOpenCartModal(false)} />}
+      {openCartModal && <CartModal />}
       {openSearchModal && <SearchModal openSearchModal={openSearchModal} closeSearchModal={() => setOpenSearchModal(false)} />}
       {openMenuModal && <MenuModal openMenuModal={openMenuModal} closeMenuModal={() => setOpenMenuModal(false)} />}
       <header
@@ -88,7 +87,7 @@ export default function NavbarHome() {
               </div>
 
               <a className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
-                {userInfo ? 'ACCOUNT' : 'LOGIN'}
+                {userInfo ? 'ACCOUNT' : <Link to={'/login'}>LOGIN</Link>}
               </a>
 
 

@@ -9,14 +9,14 @@ export default function Footer() {
               <div className="mb-[3rem]">
                 <a
                   href={"/"}
-                  className="text-[1.5rem] font-bold mb-[3rem] tracking-[.3em] "
+                  className="lg:text-[1.2rem] text-[1rem] font-bold mb-[3rem] tracking-[.3rem] "
                   id="footer-text"
                 >
                   CHI LUXURY
                 </a>
 
                 <div
-                  className="mt-[.5rem] uppercase text-[.9rem]"
+                  className="mt-[.5rem] uppercase lg:text-[.9rem] text-[.8rem]"
                   id="footer-text"
                 >
                   The best store to find all your unique and quality
@@ -24,9 +24,9 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-start lg:gap-[4rem] flex-row gap-[1.2rem] text-[1.1rem] lg:mb-0 mb-[1.5rem]">
+              <div className="flex items-start lg:gap-[4rem] flex-row gap-[1.2rem] lg:mb-0 mb-[1.5rem]">
                 <div id="footer-text">
-                  <div className="flex items-start flex-col text-[1rem] tracking-[.2rem] font-semibold lg:gap-[2rem] gap-[1.2rem] manrope">
+                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[2rem] gap-[1.2rem] manrope">
                     <a href="/">HOME</a>
                     <a href="/about">ABOUT US</a>
                     <a href="/contact">CONTACT US</a>
@@ -35,7 +35,7 @@ export default function Footer() {
                 </div>
 
                 <div id="footer-text">
-                  <div className="flex items-start flex-col text-[1rem] tracking-[.2rem] font-semibold lg:gap-[2rem] gap-[1.2rem] manrope uppercase">
+                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[2rem] gap-[1.2rem] manrope uppercase">
                     <a href="">Instagram</a>
                     <a href="">Facebook</a>
                     <a href="">Tiktok</a>
@@ -48,7 +48,7 @@ export default function Footer() {
 
             <div className="overflow-hidden">
               <img
-                src={"/fun.webp"}
+                src={"/footer.jpg"}
                 alt=""
                 className="h-[400px] w-full object-cover"
                 id="footer-img"
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div className="flex lg:flex-row flex-col lg:items-center gap-[.5rem] justify-between">
-            <div className="flex lg:flex-row flex-col lg:items-center lg:gap-[2rem] gap-[.5rem] text-[1rem] tracking-[.2rem] font-semibold uppercase manrope">
+            <div className="flex lg:flex-row flex-col lg:items-center lg:gap-[2rem] gap-[.5rem] lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">
               <div id="footer-text">© Chi Luxury 2024.</div>
 
               <div id="footer-text">Terms + Conditions</div>

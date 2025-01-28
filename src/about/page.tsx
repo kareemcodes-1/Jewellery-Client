@@ -8,7 +8,7 @@ const AboutPage = () => {
           <div className="about-grid lg:grid flex items-center flex-col gap-[2rem] grid-cols-2">
             <div className="overflow-hidden">
               <img
-                src={"/fun.webp"}
+                src={"https://i.pinimg.com/736x/ac/b3/22/acb322876b4673f5d5be8a8d38df799a.jpg"}
                 alt="about-img"
                 className="w-full h-[500px] object-cover"
                 id="about-img"

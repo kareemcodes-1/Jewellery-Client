@@ -4,7 +4,7 @@ const About = () => {
       <div className="random_container container-1 flex items-center lg:flex-row flex-col gap-[2rem]">
         <div className="lg:w-[50%] w-auto overflow-hidden">
           <img
-            src={"/fun.webp"}
+            src={"https://i.pinimg.com/736x/cb/91/0f/cb910fcc13499f79ed771cc31fe81fb5.jpg"}
             className="w-full object-cover lg:h-[700px] h-[500px]"
           />
         </div>

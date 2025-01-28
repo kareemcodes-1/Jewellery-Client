@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 
 const SubmitBtn = () => {
   const {pending} = useFormStatus();
-  return <button disabled={pending} type="submit" className="flex w-full justify-center bg-black p-[.8rem] tracking-[.4rem] uppercase text-[.8rem] font-bold text-white">{pending ? <Loading /> : 'Sign in'}</button>
+  return <button disabled={pending} type="submit" className="flex w-full justify-center bg-black p-[.8rem] tracking-[.4rem] uppercase text-[.8rem] font-bold text-white">{pending ? <Loading /> : 'SIGN IN'}</button>
 }
 
 const Login = () => {
@@ -26,7 +26,19 @@ const Login = () => {
 
 
 
-    const formAction = async (formData: any) => {
+    const formAction = async (formData: FormData) => {
+      const email = formData.get('email');
+      const password = formData.get('password');
+
+      if(!email || !password){
+          if(!email){
+              toast.error('Email is required');
+          }
+          if(!password){
+            toast.error('Password is required');
+        }
+        return;
+      }
         try {
             const userData = {
                 email: formData.get('email'),
@@ -47,7 +59,7 @@ const Login = () => {
             if(res.ok){
                 setUserInfo(data);
             }else{
-                toast('Something went wrong');
+              toast.error('Something wrong, try again.')
             }
         } catch (error) {
             console.log(error);
@@ -102,11 +114,11 @@ const Login = () => {
         </div>
       </form>
 
-      <p className="mt-10 text-center text-sm text-gray-500">
+      <p className="mt-10  uppercase text-center text-sm text-gray-500">
         Dont have an account?{' '}
         <a
-          href="/auth/register"
-          className="font-semibold text-black underline uppercase text"
+          href="/register"
+          className="font-semibold text-black underline"
         >
           Sign up
         </a>

@@ -5,14 +5,14 @@ import Layout from "../layout";
 import { useEffect, useState } from "react";
 import { Product } from "../types/types";
 import { useParams } from "react-router";
-import ProductCard from "../components/products/ProductCard";
 import { useStore } from "../store/store";
+import RelatedProducts from "@/components/related-products";
 
 const ProductDetails = () => {
    const [productDetails, setProductDetails] = useState<Product | null>(null);
 
    const {id} = useParams();
-   const {products, setProducts} = useStore();
+   const { setProducts} = useStore();
 
     useEffect(() => {
         (async function (){
@@ -34,8 +34,6 @@ const ProductDetails = () => {
         })()
     }, []);
 
-    const relatedProducts = products.slice(0, 3);
-
   return (
     <Layout>
       <div className="product-info lg:mt-[5rem] mt-[5rem] mb-[3rem]">
@@ -45,19 +43,9 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      <div className="flex flex-col mb-[2rem] mx-[1.5rem]">
-        <h2 className="lg:text-[5rem] text-[2.5rem] font-medium mb-[1rem]">Related Products</h2>
+
         
-        <div className="lg:grid grid-cols-3 gap-[1rem]">
-             {products.length > 0 ? (
-                 relatedProducts.map((product) => (
-                  <ProductCard product={product}/>
-                 ))
-             ) : (
-                <p>No Related Products</p>
-             )}
-        </div>
-      </div>
+        <RelatedProducts />
     </Layout>
   );
 };
