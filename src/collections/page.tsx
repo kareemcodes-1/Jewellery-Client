@@ -16,13 +16,23 @@ const CollectionDetails = () => {
 
   useEffect(() => {
     (async function () {
-      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/collections/collection/${id}`);
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/collections/collection/${id}`, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
       const data = await res.json();
       setCollection(data);
     })();
 
     (async function () {
-      const res = await fetch(`/api/products`);
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/products`, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
       const data = await res.json();
       setProducts(data);
     })();
