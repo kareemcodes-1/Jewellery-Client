@@ -1,18 +1,23 @@
 
+import { useStore } from "@/store/store";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router";
 
 
 const MenuModal = ({
   closeMenuModal,
   openMenuModal,
+  openSearch,
 }: {
   closeMenuModal: () => void;
   openMenuModal: boolean;
+  openSearch: () => void;
 }) => {
 
   const ref = useRef<HTMLDivElement | null>(null);
+  const {logout, userInfo} = useStore();
   
   useEffect(() => {
     console.log("openMenuModal:", openMenuModal);
@@ -34,6 +39,23 @@ const MenuModal = ({
       });
     }
   }, [openMenuModal]);
+
+  const navigate = useNavigate();
+
+  async function Logout() {
+    try {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/auth/logout`, {
+        method: "POST",
+      });
+
+      if (res.ok) {
+        logout();
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
     // useEffect(() => {
     //     if(openMenuModal){
@@ -67,8 +89,16 @@ const MenuModal = ({
           <ul className="flex flex-col text-[3rem] font-medium tracking-[.2rem]">
                <li className="overflow-hidden"><a href="/" className="nav-links">HOME</a></li>
                <li className="overflow-hidden"><a href="/products" className="nav-links">PRODUCTS</a></li>
+               <li className="overflow-hidden"><a onClick={openSearch} className="nav-links">SEARCH</a></li>
                <li className="overflow-hidden"><a href="/orders" className="nav-links">ORDERS</a></li>
-               <li className="overflow-hidden"><a href="/products" className="nav-links">SEARCH</a></li>
+               {userInfo ? (
+                <>
+                <li className="overflow-hidden"><a href="/profile" className="nav-links">PROFILE</a></li>
+                <li className="overflow-hidden"><a onClick={Logout} className="nav-links">LOGOUT</a></li>
+                </>
+               ): (
+                <li className="overflow-hidden"><a href="/login" className="nav-links">LOGIN</a></li>
+               )}
                {/* <li className="overflow-hidden"><a href="/orders" className="nav-links">WISHLIST</a></li>
                <li className="overflow-hidden"><a href="/orders" className="nav-links">CONTACT</a></li> */}
           </ul>

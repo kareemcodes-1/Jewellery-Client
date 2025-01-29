@@ -38,7 +38,7 @@ export default function NavbarHome() {
     <>
       {openCartModal && <CartModal />}
       {openSearchModal && <SearchModal openSearchModal={openSearchModal} closeSearchModal={() => setOpenSearchModal(false)} />}
-      {openMenuModal && <MenuModal openMenuModal={openMenuModal} closeMenuModal={() => setOpenMenuModal(false)} />}
+      {openMenuModal && <MenuModal openSearch={() => setOpenSearchModal(true)} openMenuModal={openMenuModal} closeMenuModal={() => setOpenMenuModal(false)} />}
       <header
         className={
           `fixed top-0 left-0 right-0 w-full px-[1.5rem] py-[.5rem] z-[1000] ${addBlackNav ? 'text-black' : 'text-white'}`
@@ -80,7 +80,7 @@ export default function NavbarHome() {
                 CART ({cart.length})
               </a>
 
-              <ShoppingCart className="lg:hidden block cursor-pointer" onClick={() => setOpenCartModal(true)}/>
+              <ShoppingCart className="lg:hidden block cursor-pointer" onClick={() => setOpenCartModal(true)}/> 
 
               <div onClick={() => setOpenSearchModal(true)} className="lg:block hidden search cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
                 SEARCH

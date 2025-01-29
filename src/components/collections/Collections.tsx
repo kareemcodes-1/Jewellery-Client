@@ -18,7 +18,7 @@ const Collections = () => {
   }, [])
 
   return (
-    <div className="lg:grid grid-cols-2">
+    <div className="lg:grid grid-cols-2 gap-0">
       {collections.map((collection: Collection) => (
         <a
           href={`/collections/${collection._id}`}

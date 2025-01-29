@@ -22,7 +22,7 @@ const RelatedProducts = () => {
 
   return (
     <div className="flex flex-col mb-[2rem]">
-        <h2 className="lg:text-[5rem] text-[2.5rem] font-medium mb-[1rem]">Related Products</h2>
+        <h2 className="lg:text-[5rem] text-[2.5rem] font-medium mb-[1rem] lg:text-start text-center">Related Products</h2>
     <div className="lg:grid grid-cols-3 gap-[1rem]">
              {products.length > 0 ? (
                  relatedProducts.map((product) => (

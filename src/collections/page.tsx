@@ -27,6 +27,7 @@ const CollectionDetails = () => {
       setProducts(data);
     })();
   }, []);
+
   const filteredProducts = products.filter(
     (product) =>
       product.collectionId.name.toLowerCase() === collection?.name.toLowerCase()
@@ -37,7 +38,7 @@ const CollectionDetails = () => {
        {openFilterModal && <FilterModal openFilterModal={openFilterModal} closeModal={() => setOpenFilterModal(false)}/>}
       <div className="lg:mt-[5rem] mt-[3rem]">
         <div className="py-5 flex flex-col items-center container-1">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex lg:flex-row flex-col lg:items-center items-start justify-between w-full">
             <h1 className="lg:text-[5rem] text-[3rem] text-black">
               {collection?.name} Collection
             </h1>

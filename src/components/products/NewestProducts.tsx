@@ -21,8 +21,8 @@ const NewestProducts = () => {
     
 
   return (
-    <div className="mt-[2rem] mx-[1.5rem]">
-      <h2 className="lg:text-[5rem] text-[3rem] mb-[1rem] font-medium">Newest Products</h2>
+    <div className="mt-[2rem] lg:mx-[1.5rem]">
+      <h2 className="lg:text-[5rem] text-[3rem] mb-[1rem] font-medium lg:text-start text-center">Newest Products</h2>
       {!products || products.length === 0 ? (
         <p className="text-body-bold">No products found</p>
       ) : (

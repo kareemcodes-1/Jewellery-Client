@@ -18,8 +18,8 @@ const TrendingProducts = () => {
       }, [])
 
   return (
-    <div className="mt-[2rem] mx-[1.5rem]">
-      <h2 className="lg:text-[5rem] text-[2.5rem] mb-[1rem] font-medium">Trending Products</h2>
+    <div className="mt-[2rem] lg:mx-[1.5rem]">
+      <h2 className="lg:text-[5rem] text-[2.5rem] mb-[1rem] font-medium lg:text-start text-center">Trending Products</h2>
       {!products || products.length === 0 ? (
         <p className="text-body-bold">No products found</p>
       ) : (

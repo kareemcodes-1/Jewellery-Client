@@ -11,6 +11,7 @@ import Wishlists from './wishlists/page.tsx'
 import Register from './auth/Register.tsx'
 import Login from './auth/Login.tsx'
 import SearchPage from './search/product/SearchPage.tsx'
+import AllProducts from './components/products/page.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
                      <Route element={<CollectionDetails />} path='/collections/:id'/>
                      <Route element={<ProductDetails />} path='/products/:id'/>
                      <Route path='/search/product' element={<SearchPage />}></Route>
+                     <Route path='/products' element={<AllProducts />}></Route>
                      <Route element={<AboutPage />} path='/about'/>
                      <Route element={<Wishlists />} path='/wishlist'/>
                 </Routes>
