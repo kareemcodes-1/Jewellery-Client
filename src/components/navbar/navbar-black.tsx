@@ -20,7 +20,7 @@ export default function NavbarHome() {
     <>
       {openCartModal && <CartModal  />}
       {openSearchModal && <SearchModal openSearchModal={openSearchModal} closeSearchModal={() => setOpenSearchModal(false)} />}
-      {openMenuModal && <MenuModal openMenuModal={openMenuModal} closeMenuModal={() => setOpenMenuModal(false)} />}
+      {openMenuModal && <MenuModal openSearch={() => setOpenSearchModal(false)} openMenuModal={openMenuModal} closeMenuModal={() => setOpenMenuModal(false)} />}
       <header
         className={
           "fixed top-0 left-0 right-0 w-full px-[1.5rem] py-[.5rem] z-[1000]"
