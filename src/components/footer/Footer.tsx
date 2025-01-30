@@ -24,9 +24,9 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-start lg:gap-[4rem] flex-row gap-[1.2rem] lg:mb-0 mb-[1.5rem]">
+              <div className="flex items-start lg:gap-[4rem] flex-row gap-[1rem] lg:mb-0 mb-[1.5rem]">
                 <div id="footer-text">
-                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[2rem] gap-[1.2rem] manrope">
+                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[1.4rem] gap-[1rem] manrope">
                     <a href="/">HOME</a>
                     <a href="/about">ABOUT US</a>
                     <a href="/contact">CONTACT US</a>
@@ -35,7 +35,7 @@ export default function Footer() {
                 </div>
 
                 <div id="footer-text">
-                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[2rem] gap-[1.2rem] manrope uppercase">
+                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[1.4rem] gap-[1rem] manrope uppercase">
                     <a href="">Instagram</a>
                     <a href="">Facebook</a>
                     <a href="">Tiktok</a>
@@ -57,23 +57,15 @@ export default function Footer() {
           </div>
 
           <div className="flex lg:flex-row flex-col lg:items-center gap-[.5rem] justify-between">
-            <div className="flex lg:flex-row flex-col lg:items-center lg:gap-[2rem] gap-[.5rem] lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">
-              <div id="footer-text">© Chi Luxury 2024.</div>
+            <div className="flex lg:flex-row flex-col lg:items-center lg:gap-[1.5rem] gap-[.5rem] lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">
 
               <div id="footer-text">Terms + Conditions</div>
 
               <div id="footer-text">Privacy Policy</div>
             </div>
 
-            <div className="lg:mt-0 mt-[2rem]" id="footer-text">
-              Website by{" "}
-              <span className="font-bold">
-                <a href="tel:+2347063535374" target="_blank">
-                  Kareem Codes
-                </a>{" "}
-                ✨
-              </span>
-            </div>
+            <div id="footer-text" className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© Chi Luxury 2024.</div>
+
           </div>
         </div>
       </footer>

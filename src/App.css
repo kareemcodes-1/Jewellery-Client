@@ -115,6 +115,10 @@ span{
   word-spacing: 0.2em;
 }
 
+.nav-links{
+  letter-spacing: .3rem;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   background: #000 !important;

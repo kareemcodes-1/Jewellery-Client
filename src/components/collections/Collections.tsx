@@ -18,7 +18,7 @@ const Collections = () => {
   }, [])
 
   return (
-    <div className="lg:grid grid-cols-2 gap-0">
+    <div className="lg:grid grid-cols-2">
       {collections.map((collection: Collection) => (
         <a
           href={`/collections/${collection._id}`}
@@ -29,7 +29,7 @@ const Collections = () => {
             key={collection._id}
             src={collection.image}
             alt={collection.name}
-            className="lg:w-[700px] w-full h-[500px] object-cover"
+            className="w-full h-[500px] object-cover"
           />
           <div className="absolute bottom-[2rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[2rem] text-[1.8rem] flex items-center gap-[.5rem]">
             Shop {collection.name}{" "}

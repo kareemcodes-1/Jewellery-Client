@@ -40,9 +40,9 @@ const CartModal = () => {
       <div className="flex h-full">
 
         <div className="w-full h-full sticky top-0">
-          <h1 className="text-[1.2rem] p-[1rem] manrope font-semibold tracking-[.1rem]">BASKET</h1>
+          <h1 className="lg:text-[1.1rem] text-[1rem] p-[1rem] manrope font-semibold tracking-[.3rem]">BASKET</h1>
           <div
-            className="absolute right-[1rem] top-[1rem] text-[1.2rem] font-semibold cursor-pointer manrope uppercase tracking-[.1rem]"
+            className="absolute right-[1rem] top-[1rem] lg:text-[1.1rem] text-[1rem] font-semibold cursor-pointer manrope uppercase tracking-[.3rem]"
             onClick={() => setOpenCartModal(false)}
           >
             Close

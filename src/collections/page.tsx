@@ -47,7 +47,7 @@ const CollectionDetails = () => {
     <Layout>
        {openFilterModal && <FilterModal openFilterModal={openFilterModal} closeModal={() => setOpenFilterModal(false)}/>}
       <div className="lg:mt-[5rem] mt-[3rem]">
-        <div className="py-5 flex flex-col items-center container-1">
+        <div className="py-5 flex flex-col container-1">
           <div className="flex lg:flex-row flex-col lg:items-center items-start justify-between w-full">
             <h1 className="lg:text-[5rem] text-[3rem] text-black">
               {collection?.name} Collection
@@ -86,11 +86,12 @@ const CollectionDetails = () => {
             <button><BarsArrowDown className="w-[2rem] h-[2rem]"/></button> */}
             {/* <button type="button">Filter</button> */}
           </div>
-          <div className="lg:grid flex items-start flex-col gap-[1rem] grid-cols-3">
+            
+            <div className="lg:grid flex flex-col grid-cols-3 lg:gap-[1rem] gap-[2rem] mt-[2rem]">
             {filteredProducts.map((product: Product) => (
               <ProductCard key={product._id} product={product} />
             ))}
-          </div>
+            </div>
         </div>
       </div>
     </Layout>
@@ -98,3 +99,5 @@ const CollectionDetails = () => {
 };
 
 export default CollectionDetails;
+
+

@@ -21,6 +21,7 @@ const CheckoutBtn = () => {
               headers: {
                 'Content-Type': 'application/json'
               },
+              credentials: "include",
               body: JSON.stringify({products: cart, userInfo})
              });
       

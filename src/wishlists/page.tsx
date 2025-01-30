@@ -17,7 +17,7 @@ const Wishlists = () => {
     <Layout>
          <div className="mt-[3rem] px-[1.5rem] mb-[1rem]">
               <div className='flex items-center justify-between w-full'>
-              <h1 className='lg:text-[6rem] text-[4rem] text-black'>All Wishlists</h1>
+              <h1 className='lg:text-[6rem] text-[3rem] text-black'>All Wishlists</h1>
               </div>
 
               <div className='lg:grid flex flex-col grid-cols-3 gap-[1rem]'>
