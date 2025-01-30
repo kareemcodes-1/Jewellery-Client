@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useEffect } from 'react'
 import Layout from '@/layout'
 import { useStore } from '../store/store'
