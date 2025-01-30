@@ -9,7 +9,12 @@ const AllProducts = () => {
 
     useEffect(() => {
         (async function () {
-            const res = await fetch(`/api/products`);
+            const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/products`, {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
             const data = await res.json();
             setProducts(data);
           })();

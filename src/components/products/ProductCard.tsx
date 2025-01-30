@@ -43,7 +43,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <>
         <div className=" flex flex-col items-center justify-center mx-auto   swiper-product-sm">
-        <a href={`/products/${product._id}`} className="xs:w-full w-[320px] h-[430px] gap-2 text-center relative">
+        <a href={`/products/${product._id}`} className="xs:w-full w-[320px] h-[400px] gap-2 text-center relative">
           <img
             src={product.images[0]}
             alt={product.name}
