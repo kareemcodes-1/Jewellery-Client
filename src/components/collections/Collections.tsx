@@ -31,7 +31,7 @@ const Collections = () => {
             alt={collection.name}
             className="w-full h-[500px] object-cover"
           />
-          <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1.8rem] flex items-center gap-[.5rem] uppercase font-semibold manrope tracking-[.2rem]">
+          <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1rem] flex items-center gap-[.5rem] uppercase font-semibold manrope tracking-[.2rem]">
             Shop {collection.name}{" "}
             <div className=" w-[2.5rem] h-[2.5rem] flex items-center justify-center">
                   <svg

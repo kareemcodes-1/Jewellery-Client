@@ -59,15 +59,16 @@ const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
       <div className="flex items-start gap-[1rem]">
           <Link to={'/'} className="uppercase border-r border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">Shop</Link>
 
-          <Link to={'/'} className="uppercase border-r border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">{productInfo.name}</Link>
-
-          <Link to={'/'} className="uppercase border-r border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">{productInfo?.collectionId?.name}</Link>
+          <Link to={'/'} className="uppercase border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">{productInfo.name}</Link>
       </div>
 
       <div className="flex justify-between items-center gap-[1rem]">
-        <h2 className="flex gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name} <span className="font-thin !text-gray-500">|</span> <p className="text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p></h2>
+        <h2 className="lg:flex hidden gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name} <span className="font-thin !text-gray-500">|</span> <p className="text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p></h2>
+        <h2 className="lg:hidden block gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name}</h2>
         {/* <HeartFavorite product={productInfo} /> */}
       </div>
+
+      <p className="lg:hidden block text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p>
 
 
       <div className="flex flex-col gap-2">
