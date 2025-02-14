@@ -55,14 +55,14 @@ export default function HomePage() {
             </div>
           </div>
         </div> */}
-        <div className="absolute lg:bottom-[0rem] bottom-[1rem] lg:left-[10rem] right-[1rem]">
+        <div className="absolute lg:bottom-[1rem] bottom-[1rem] lg:left-[10rem] right-[1rem]">
             <div className="flex flex-col items-end justify-end w-full">
-              {/* <a
-                href="/listings"
-                className="text-white lg:mt-0 mt-[1rem] flex items-center font-semibold gap-[1rem] tracking-[.2rem] lg:justify-center justify-start"
+              <a
+                href="/products"
+                className="text-white lg:mt-0 mt-[1rem] flex items-center font-semibold gap-[.5rem] lg:justify-center justify-start"
               >
-                <div>SHOP ALL JEWELLERY</div>
-                <div className="border border-[#fff] rounded-full w-[2.5rem] h-[2.5rem] flex items-center justify-center">
+                <div className="lg:text-[1.1rem] text-[1rem] lg:tracking-[.5rem] tracking-[.3rem] font-semibold manrope uppercase">SHOP ALL JEWELLERY</div>
+                <div className=" w-[2.5rem] h-[2.5rem] flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -78,14 +78,14 @@ export default function HomePage() {
                     />
                   </svg>
                 </div>
-              </a> */}
+              </a>
 
-              <div className="flex items-start gap-[.5rem] justify-start text-[#fff]">
-                <h3 className="lg:text-[8rem] md:text-[6rem] text-[2.7rem] text-white">
-                  Exclusivity
+              {/* <div className="flex items-start gap-[.5rem] justify-start text-[#fff]">
+                <h3 className="lg:text-[10rem] md:text-[6rem] text-[2.7rem] text-white uppercase">
+                 Pure
                 </h3>
-                <h3 className="lg:text-[8rem] md:text-[6rem] text-[2.7rem] text-white">&nbsp;defined</h3>
-              </div>
+                <h3 className="lg:text-[10rem] md:text-[6rem] text-[2.7rem] text-white uppercase">&nbsp;Elegance</h3>
+              </div> */}
             </div>
           </div>
       </div>

@@ -16,6 +16,7 @@ import ContactPage from './contact/page.tsx'
 import OrderPage from './orders/page.tsx'
 import SuccessPage from './checkout/success/page.tsx'
 import CancelPage from './checkout/cancel/page.tsx'
+import ProfilePage from './settings/profile/page.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -31,6 +32,7 @@ createRoot(document.getElementById('root')!).render(
                      <Route path='/products' element={<AllProducts />}></Route>
                      <Route element={<AboutPage />} path='/about'/>
                      <Route element={<ContactPage />} path='/contact'/>
+                     <Route element={<ProfilePage />} path='/profile'/>
                      <Route element={<OrderPage />} path='/orders'/>
                      <Route element={<Wishlists />} path='/wishlists'/>
                      <Route element={<SuccessPage />} path='/checkout/success'/>

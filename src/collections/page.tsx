@@ -7,12 +7,14 @@ import Layout from "../layout";
 import FilterModal from "@/components/modals/FilterModal";
 
 
+
 const CollectionDetails = () => {
   const { id } = useParams();
   const [collection, setCollection] = useState<Collection | null>(null);
-  const { products, setProducts, handleSort } = useStore();
+  const { products, setProducts, handleSort, resetFilter } = useStore();
   const [openSortDropDown, setOpenSortDropDown] = useState<boolean>(false);
   const [openFilterModal, setOpenFilterModal] = useState<boolean>(false);
+  // const [filterInStock, setFilterInStock] = useState<boolean>(true);
 
   useEffect(() => {
     (async function () {
@@ -27,7 +29,7 @@ const CollectionDetails = () => {
     })();
 
     (async function () {
-      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/products`, {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/collections/products/collection/${id}`, {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
@@ -38,14 +40,14 @@ const CollectionDetails = () => {
     })();
   }, []);
 
-  const filteredProducts = products.filter(
-    (product) =>
-      product.collectionId.name.toLowerCase() === collection?.name.toLowerCase()
-  );
+  // const filteredProducts = products.filter(
+  //   (product) =>
+  //     product.collectionId.name.toLowerCase() === collection?.name.toLowerCase() && product.inStock === filterInStock
+  // );
 
   return (
     <Layout>
-       {openFilterModal && <FilterModal openFilterModal={openFilterModal} closeModal={() => setOpenFilterModal(false)}/>}
+       {openFilterModal && <FilterModal openFilterModal={openFilterModal}  closeModal={() => setOpenFilterModal(false)}/>}
       <div className="lg:mt-[5rem] mt-[3rem]">
         <div className="py-5 flex flex-col container-1">
           <div className="flex lg:flex-row flex-col lg:items-center items-start justify-between w-full">
@@ -61,23 +63,15 @@ const CollectionDetails = () => {
             {openSortDropDown && (
             <div className="absolute left-0 top-[3.5rem] mt-2 w-[13rem] bg-white border border-gray-200 rounded-lg shadow-lg z-50">
               <ul className="flex flex-col text-[.925rem]">
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <button className="uppercase tracking-[.0925rem]" type="button">Popularity</button>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <button className="uppercase tracking-[.0925rem]" type="button" onClick={() => handleSort('latest')}>Latest</button>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <button className="uppercase tracking-[.0925rem]" type="button" onClick={() => handleSort('low_to_high')}>Price:Low to High</button>
-                </li>
+                  <button className="uppercase tracking-[.0925rem] px-4 py-2 hover:bg-gray-100 cursor-pointer flex text-start" type="button">Popularity</button>
 
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <button className="uppercase tracking-[.0925rem]" type="button" onClick={() => handleSort('high_to_low')}>Price:High to Low</button>
-                </li>
+                  <button className="uppercase tracking-[.0925rem] px-4 py-2 hover:bg-gray-100 cursor-pointer flex text-start" type="button" onClick={() => handleSort('latest')}>Latest</button>
+                  
+                  <button className="uppercase tracking-[.0925rem] px-4 py-2 hover:bg-gray-100 cursor-pointer flex text-start" type="button" onClick={() => handleSort('low_to_high')}>Price:Low to High</button>
 
-                <li onClick={() => handleSort('reset')}  className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <button className="uppercase tracking-[.0925rem]" type="button" >Reset</button>
-                </li>
+                  <button className="uppercase tracking-[.0925rem] px-4 py-2 hover:bg-gray-100 cursor-pointer flex text-start" type="button" onClick={() => handleSort('high_to_low')}>Price:High to Low</button>
+
+                  <button className="uppercase tracking-[.0925rem] px-4 py-2 hover:bg-gray-100 cursor-pointer flex text-start" type="button"  onClick={resetFilter}>Reset</button>
               </ul>
             </div>
              )}
@@ -88,7 +82,7 @@ const CollectionDetails = () => {
           </div>
             
             <div className="lg:grid flex flex-col grid-cols-3 lg:gap-[1rem] gap-[2rem] mt-[2rem]">
-            {filteredProducts.map((product: Product) => (
+            {products.map((product: Product) => (
               <ProductCard key={product._id} product={product} />
             ))}
             </div>

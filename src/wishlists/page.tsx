@@ -2,9 +2,22 @@ import { useEffect } from 'react'
 import { useStore } from '../store/store'
 import Layout from '../layout';
 import ProductCard from '../components/products/ProductCard';
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
 
 const Wishlists = () => {
   const {wishlists, setWishLists} = useStore();
+
+  useEffect(() => {
+     const lenis = new Lenis({
+       autoRaf: true,
+     });
+     
+     // Listen for the scroll event and log the event data
+     lenis.on('scroll', () => {
+     });
+   }, []);
+
   useEffect(() => {
       (async function () {
            const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/wishlists`);

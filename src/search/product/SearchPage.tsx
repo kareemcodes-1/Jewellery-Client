@@ -4,10 +4,22 @@ import ProductCard from '../../components/products/ProductCard';
 import RelatedProducts from '@/components/related-products';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router';
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
 
 const SearchPage = () => {
 
   const {setProducts, products} = useStore();
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', () => {
+    });
+  }, []);
 
   let [searchParams] = useSearchParams();
   const value = searchParams.get("q") as string;

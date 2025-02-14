@@ -16,7 +16,7 @@ const Gallery = ({
       <img
         src={mainImage}
         alt="product"
-        className=" h-96 rounded-lg shadow-xl object-cover lg:block flex items-center justify-center lg:mx-0 mx-auto"
+        className=" h-[30rem] shadow-xl object-cover lg:block flex items-center justify-center lg:mx-0 mx-auto"
       />
       <div className="flex gap-2 overflow-auto tailwind-scrollbar-hide">
         {productMedia.map((image, index) => (
@@ -24,7 +24,7 @@ const Gallery = ({
             key={index}
             src={image}
             alt="product"
-            className={`w-20 h-20 rounded-lg object-cover cursor-pointer ${
+            className={`w-20 h-20 object-cover cursor-pointer ${
               mainImage === image ? "border-black border" : ""
             }`}
             onClick={() => setMainImage(image)}

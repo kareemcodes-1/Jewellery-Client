@@ -1,7 +1,20 @@
 import Layout from "@/layout"
+import { useEffect } from "react";
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
 
 
 const ContactPage = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', () => {
+    });
+  }, []);
+
   return (
     <Layout>
       <section className="contact lg:mt-[7rem] mt-[5rem]">

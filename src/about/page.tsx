@@ -1,6 +1,20 @@
+import { useEffect } from "react";
 import Layout from "../layout";
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
 
 const AboutPage = () => {
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', () => {
+    });
+  }, []);
+
   return (
     <Layout>
       <section className="about mt-[6rem]">

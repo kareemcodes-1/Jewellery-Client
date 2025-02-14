@@ -65,9 +65,9 @@ export default function NavbarHome() {
                 SEARCH
               </div>
 
-              <a className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
-                {userInfo ? 'ACCOUNT' : <Link to={'/login'}>LOGIN</Link>}
-              </a>
+              <Link to={`${userInfo ? '/profile' : '/login'}`} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+                ACCOUNT
+              </Link>
 
 
             </div>

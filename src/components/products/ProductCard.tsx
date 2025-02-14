@@ -62,14 +62,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <button
               onClick={handleAddToCart}
               type="button"
-              className="bg-black mt-[.5rem] w-[15rem] p-[.8rem] tracking-[.4rem] text-[.8rem] font-bold text-white  text-center flex items-center justify-center"
+              className="bg-black mt-[.5rem] w-[15rem] p-[.8rem] tracking-[.4rem] text-[.8rem] font-bold text-white  text-center flex items-center justify-center hover:opacity-80 transition-opacity"
             >
               {loading ? 'Loading...' : 'ADD TO CART'}
             </button>
           </div>
         ) : (
           <div
-            className="bg-black mt-[.5rem] h-[3rem] text-white w-[15rem] flex text-center items-center justify-center mx-auto opacity-80"
+            className="bg-black mt-[.5rem] w-[15rem] p-[.8rem] tracking-[.4rem] text-[.8rem] font-bold text-white  text-center flex items-center justify-center opacity-80"
             aria-disabled
           >
             ADD TO CART
@@ -100,14 +100,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <button
               type="button"
               onClick={handleAddToCart}
-              className="bg-black mt-[.5rem] w-[15rem] p-[.8rem] tracking-[.4rem] text-[.8rem] font-bold text-white  text-center items-center justify-center"
+              className="bg-black mt-[.5rem] w-[15rem] p-[.8rem] tracking-[.4rem] text-[.8rem] font-bold text-white  text-center items-center justify-center hover:opacity-80 transition-opacity"
             >
                  {loading ? <Loading /> : 'ADD TO CART'}
             </button>
           </div>
         ) : (
           <div
-            className="bg-black mt-[.5rem] h-[2.7rem] w-[10rem] text-white flex text-center items-center justify-center opacity-80"
+            className="bg-black mt-[.5rem] w-[15rem] p-[.8rem] tracking-[.4rem] text-[.8rem] font-bold text-white  text-center flex items-center justify-center opacity-80"
             aria-disabled
           >
             ADD TO CART

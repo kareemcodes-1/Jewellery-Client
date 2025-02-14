@@ -3,10 +3,23 @@ import { useEffect } from 'react'
 import Layout from '@/layout'
 import { useStore } from '../store/store'
 import { formatCurrency } from '../lib/formatCurrency';
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
+
 
 const OrderPage = () => {
 
   const {userInfo, orders, setOrders} = useStore();
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', () => {
+    });
+  }, []);
 
   useEffect(() => {
     if(userInfo){

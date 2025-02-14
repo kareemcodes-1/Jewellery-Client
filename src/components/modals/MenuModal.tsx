@@ -91,14 +91,8 @@ const MenuModal = ({
                 <a href="/products" className="nav-links">PRODUCTS</a>
                <a onClick={openSearch} className="nav-links cursor-pointer">SEARCH</a>
               <a href="/orders" className="nav-links">ORDERS</a>
-               {userInfo ? (
-                <>
-                <a href="/profile" className="nav-links">PROFILE</a>
-                 <a onClick={Logout} className="nav-links cursor-pointer">LOGOUT</a>
-                </>
-               ): (
-                <a href="/login" className="nav-links">LOGIN</a>
-               )}
+               {userInfo && <a onClick={Logout} className="nav-links cursor-pointer">LOGOUT</a> }
+               
                {/* <li className="overflow-hidden"><a href="/orders" className="nav-links">WISHLIST</a></li>
                <li className="overflow-hidden"><a href="/orders" className="nav-links">CONTACT</a></li> */}
           </ul>

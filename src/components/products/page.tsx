@@ -2,10 +2,22 @@ import Layout from '@/layout'
 import { useEffect } from 'react'
 import ProductCard from './ProductCard'
 import { useStore } from '@/store/store'
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
 
 const AllProducts = () => {
 
     const {products, setProducts} = useStore();
+
+    useEffect(() => {
+        const lenis = new Lenis({
+          autoRaf: true,
+        });
+        
+        // Listen for the scroll event and log the event data
+        lenis.on('scroll', () => {
+        });
+      }, []);
 
     useEffect(() => {
         (async function () {
@@ -18,6 +30,8 @@ const AllProducts = () => {
             const data = await res.json();
             setProducts(data);
           })();
+
+
     }, [])
 
   return (

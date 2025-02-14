@@ -6,8 +6,23 @@ import NewestProducts from './components/products/NewestProducts';
 import TrendingProducts from './components/products/TrendingProducts';
 import About from './components/about/About';
 import Footer from './components/footer/Footer';
+import { useEffect } from 'react';
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
+
 
 const App = () => {
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', () => {
+    });
+  }, []);
+
   return (
     <>
       <Navbar />

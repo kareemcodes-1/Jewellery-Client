@@ -16,7 +16,7 @@ export default function Footer() {
                 </a>
 
                 <div
-                  className="mt-[.5rem] uppercase lg:text-[.9rem] text-[.8rem]"
+                  className="mt-[.5rem] lg:w-[400px] uppercase lg:text-[.9rem] text-[.8rem] tracking-[.05rem]"
                   id="footer-text"
                 >
                   The best store to find all your unique and quality

@@ -7,12 +7,27 @@ import { Product } from "../types/types";
 import { useParams } from "react-router";
 import { useStore } from "../store/store";
 import RelatedProducts from "@/components/related-products";
+import Lenis from "lenis";
+import 'lenis/dist/lenis.css'
 
 const ProductDetails = () => {
    const [productDetails, setProductDetails] = useState<Product | null>(null);
 
+   
+
    const {id} = useParams();
    const { setProducts} = useStore();
+
+   
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', () => {
+    });
+  }, []);
 
     useEffect(() => {
         (async function (){
