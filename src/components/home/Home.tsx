@@ -70,23 +70,6 @@ export default function HomePage() {
                 </div>
               </a>
 
-              {/* <div className="flex items-start gap-[.5rem] justify-start text-[#fff]">
-                <h3 className="lg:text-[10rem] md:text-[6rem] text-[2.7rem] text-white uppercase">
-                 Pure
-                </h3>
-                <h3 className="lg:text-[10rem] md:text-[6rem] text-[2.7rem] text-white uppercase">&nbsp;Elegance</h3>
-              </div> */}
-              {/* <SplitText
-                text="Hello, Tailwind!"
-                className="text-2xl text-white font-semibold text-center"
-                delay={50}
-                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                easing="easeOutCubic"
-                threshold={0.2}
-                rootMargin="-50px"
-                // onLetterAnimationComplete={handleAnimationComplete}
-                /> */}
             </div>
           </div>
       </div>

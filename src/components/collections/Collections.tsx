@@ -88,7 +88,7 @@ const Collections = () => {
                 rootMargin="-50px"
                 className="uppercase font-semibold manrope tracking-[.2rem] whitespace-nowrap" // Prevent text from wrapping
               />
-              <div className="flex">
+              <div className="lg:flex hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
