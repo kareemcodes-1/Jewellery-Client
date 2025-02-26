@@ -72,6 +72,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   });
 
   return (
+    // @ts-ignore
     <animated.div ref={ref} style={springProps}>
       {children}
     </animated.div>

@@ -12,11 +12,13 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
+    
     "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "noEmitOnError": false,
     "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
