@@ -43,6 +43,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
   return (
     <>
+        <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
         <div className=" flex flex-col items-center justify-center mx-auto   swiper-product-sm">
         <a href={`/products/${product._id}`} className="xs:w-full w-[320px] h-[400px] gap-2 text-center relative">
           <img
@@ -77,6 +78,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         )}
         </div>
+        </FadeContent>
 
       <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
       <div className=" flex flex-col gap-2 text-center items-center justify-center relative swiper-product-lg">
