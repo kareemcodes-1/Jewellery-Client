@@ -74,7 +74,7 @@ const Collections = () => {
                 className="w-full h-full object-cover collection-img"
               />
             </div>
-            <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1rem] flex items-center gap-[.5rem] uppercase font-semibold manrope tracking-[.2rem]">
+            <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1rem] flex items-center gap-[.5rem] uppercase font-semibold manrope tracking-[.2rem] w-full">
               <SplitText
                 text={`Shop ${collection.name}`}
                 delay={50}
