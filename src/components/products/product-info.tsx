@@ -8,8 +8,9 @@ import formatCurrency from "../../utils/formatCurrency";
 import toast from "react-hot-toast";
 import { Minus, Plus } from "lucide-react";
 import { Link } from "react-router";
+import Skeleton from "react-loading-skeleton";
 
-const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
+const ProductInfo = ({ productInfo, loading }: { productInfo: Product, loading: boolean }) => {
   const {addToCart, setOpenCartModal, cart} = useStore();
   const [,setLoading] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
@@ -56,26 +57,36 @@ const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
   return (
     <div className="flex flex-col gap-4 lg:w-[50%] w-full">
 
-      <div className="flex items-start gap-[1rem]">
+      {loading ? <Skeleton className="!w-[20%]"/> : <div className="flex items-start gap-[1rem]">
           <Link to={'/'} className="uppercase border-r border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">Shop</Link>
 
           <Link to={'/'} className="uppercase border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">{productInfo.name}</Link>
-      </div>
+      </div>}
+      {/* <div className="flex items-start gap-[1rem]">
+          <Link to={'/'} className="uppercase border-r border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">Shop</Link>
 
+          <Link to={'/'} className="uppercase border-gray-400 pr-[.5rem] tracking-[.2rem] text-[.8rem]">{productInfo.name}</Link>
+      </div> */}
+
+      {loading ? <Skeleton className="!w-[40%] h-[2rem]"/> : (
+        
       <div className="flex justify-between items-center gap-[1rem]">
-        <h2 className="lg:flex hidden gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name} <span className="font-thin !text-gray-500">|</span> <p className="text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p></h2>
-        <h2 className="lg:hidden block gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name}</h2>
-        {/* <HeartFavorite product={productInfo} /> */}
-      </div>
+      <h2 className="lg:flex hidden gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name} <span className="font-thin !text-gray-500">|</span> <p className="text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p></h2>
+      <h2 className="lg:hidden block gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name}</h2>
+      {/* <HeartFavorite product={productInfo} /> */}
+    </div>
+      )}
+
 
       <p className="lg:hidden block text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p>
 
-
-      <div className="flex flex-col gap-2">
-        <p className="font-light text-[.9rem] tracking-[.1rem] uppercase">
-          {productInfo.description}
-        </p>
-      </div>
+      {loading ? <Skeleton className="!w-[60%] h-[5rem]"/> : (
+              <div className="flex flex-col gap-2">
+              <p className="font-light text-[.9rem] tracking-[.1rem] uppercase">
+                {productInfo.description}
+              </p>
+            </div>
+      )}
 
         
       <div className="flex flex-col gap-2">

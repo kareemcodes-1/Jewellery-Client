@@ -6,6 +6,7 @@ import SearchModal from "../modals/SearchModal";
 import MenuModal from "../modals/MenuModal";
 import { useStore } from "../../store/store";
 import { Link } from "react-router";
+import AnimatedContent from "@/utils/animated-content";
 
 
 export default function NavbarHome() {
@@ -49,17 +50,56 @@ export default function NavbarHome() {
         >
 
             <div className="flex items-center justify-center gap-[1.5rem]">
-              <div onClick={() => setOpenMenuModal(true)} className=" lg:block hidden  nav-open cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              {/* <div onClick={() => setOpenMenuModal(true)} className=" lg:block hidden  nav-open cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
                 MENU
-              </div>
+              </div> */}
+
+         <div onClick={() => setOpenMenuModal(true)} className=" lg:block hidden  nav-open cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+          <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
+
+                MENU
+          </AnimatedContent>
+          </div>
 
               <div className="lg:hidden block text-[1rem] nav-open cursor-pointer nav-link">
+              <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
                 <Menu onClick={() => setOpenMenuModal(true)}  className="nav-open lg:w-[1.2rem] xs:text-[1rem] w-[1.2rem]" />
+            </AnimatedContent>
               </div>
 
-              <a href={"/about"} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
-                ABOUT
+          <a href={"/about"} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
+             ABOUT
+          </AnimatedContent>
               </a>
+              
             </div>
 
           <div className="flex text-[2rem] items-center justify-center lg:ml-[5rem] ml-0">
@@ -68,7 +108,18 @@ export default function NavbarHome() {
               id="nav"
               className="flex lg:text-[1.8rem] xs:text-[1rem] text-[1.2rem] items-center justify-center lg:ml-[5rem] ml-0 font-semibold tracking-[.3rem]"
             >
+          <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
               CHI LUXURY
+          </AnimatedContent>
             </a>
           </div>
 
@@ -77,17 +128,62 @@ export default function NavbarHome() {
                 onClick={() => setOpenCartModal(true)}
                 className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]"
               >
+                <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
                 CART ({cart.length})
+                </AnimatedContent>
               </a>
 
-              <ShoppingCart className="lg:hidden block cursor-pointer" onClick={() => setOpenCartModal(true)}/> 
+              <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
+              <ShoppingCart className="lg:hidden block cursor-pointer" onClick={() => setOpenCartModal(true)}/>
+              </AnimatedContent> 
 
               <div onClick={() => setOpenSearchModal(true)} className="lg:block hidden search cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
                 SEARCH
+                </AnimatedContent>
               </div>
 
+
               <Link to={`${userInfo ? '/profile' : '/login'}`} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
-                ACCOUNT
+              <AnimatedContent
+            distance={20}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 80, friction: 20 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
+             ACCOUNT
+          </AnimatedContent>
               </Link>
 
 

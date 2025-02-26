@@ -6,9 +6,11 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
 import ProductCard from "../products/ProductCard";
 import { Product } from "../../types/types";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 // import ProductCard from "../ProductCard";
 
-const ProductSwiper = ({ products }: { products: Product[] }) => {
+const ProductSwiper = ({ products, loading }: { products: Product[], loading: boolean }) => {
   return (
     <>
       <Swiper
@@ -24,7 +26,7 @@ const ProductSwiper = ({ products }: { products: Product[] }) => {
       >
         {products.map((product: Product) => (
           <SwiperSlide key={product._id}>
-            <ProductCard product={product} />
+            {loading ? <Skeleton className="h-[350px] w-[400px]"/> : <ProductCard product={product} />}
           </SwiperSlide>
         ))}
       </Swiper>

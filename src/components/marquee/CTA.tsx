@@ -1,6 +1,8 @@
+import FadeContent from "@/utils/fade-content";
 import Marquee from "react-fast-marquee";
 export default function CTA() {
   return (
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
     <Marquee
       pauseOnHover
       className="flex items-center gap-[2rem] lg:text-[7rem] text-[5rem] my-[1.5rem] ginger"
@@ -70,5 +72,6 @@ export default function CTA() {
         </div>
       </div>
     </Marquee>
+   </FadeContent>
   );
 }

@@ -1,68 +1,58 @@
 
+import SplitText from "@/utils/split-text";
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function HomePage() {
 
+  const ref = useRef<HTMLDivElement | null>(null);
+  
+  useEffect(() => {
+    if(ref){
+      gsap.fromTo(
+        ref.current,
+        { scale: 1.3 },// Start state
+        {
+          scale: 1,
+          duration: 0.7,
+          delay: 0.24,
+          ease: "easeInOut",
+          scrollTrigger: {
+            trigger: ref.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+            markers: false,
+          },
+        }
+      );
+    }
+  }, [ref]);
+
   return (
-    <>
-      <div className="home section relative">
-        {/* <div className="absolute bottom-[0rem] lg:left-[10rem] right-[1rem]">
-          <div className="flex flex-col items-end justify-end w-full">
-            <div id="home-title">
-              <a
-                href={"/products"}
-                className="text-[#fff]  lg:text-[1.3rem] text-[1rem] uppercase flex items-center gap-[.5rem] all-products"
-              >
-                SHOP ALL JEWELLRY <ArrowUpRight />
-              </a>
-            </div>
-
-          
-          </div>
-           <div className="flex flex-col items-end justify-end w-full">
-            <div id="home-title">
-              <a
-                href={"/products"}
-                className="text-[#fff]  lg:text-[1.3rem] text-[1rem] uppercase flex items-center gap-[.5rem] all-products"
-              >
-                SHOP ALL JEWELLRY <ArrowUpRight />
-              </a>
-            </div>
-
-            <div
-              id="home-title"
-              className="lg:text-[2rem] text-[1rem] mt-[1rem] lg:mb-0 mb-[1rem] text-[#fff] uppercase"
-            >
-              The best quality jewellery at it finest
-            </div>
-
-            <div className="flex items-center justify-center w-full mx-auto gap-[.5rem] text-[#fff] uppercase">
-              <span
-                className="lg:text-[5.5rem] md:text-[4rem] xs:text-[1.5rem] text-[1.7rem]"
-                id="home-title"
-              >
-                Luxury Jewellery
-              </span>
-              <span
-                id="home-title"
-                className="lg:text-[5.5rem] md:text-[4rem] xs:text-[1.5rem] text-[1.7rem]"
-              >
-                &nbsp;defined
-              </span>
-            </div>
-          </div>
-        </div> */}
+    <div className=" overflow-hidden">
+      <div className="home section relative" ref={ref}>
         <div className="absolute lg:bottom-[1rem] bottom-[1rem] lg:left-[10rem] right-[1rem]">
             <div className="flex flex-col items-end justify-end w-full">
               <a
                 href="/products"
                 className="text-white lg:mt-0 mt-[1rem] flex items-center font-semibold gap-[.5rem] lg:justify-center justify-start"
               >
-                <div className="lg:text-[1.1rem] text-[1rem] lg:tracking-[.5rem] tracking-[.3rem] font-semibold manrope uppercase">SHOP ALL JEWELLERY</div>
-                <div className=" w-[2.5rem] h-[2.5rem] flex items-center justify-center">
+                <div className="overflow-hidden">
+                <SplitText 
+                text="SHOP ALL JEWELLERY"
+                delay={50}
+                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                // easing="easeOutCubic"
+                threshold={0.2}
+                rootMargin="0px" className="lg:text-[1.1rem] text-[1rem] lg:tracking-[.5rem] tracking-[.3rem] font-semibold manrope uppercase" />
+                </div>
+
+                <div className=" flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -86,9 +76,20 @@ export default function HomePage() {
                 </h3>
                 <h3 className="lg:text-[10rem] md:text-[6rem] text-[2.7rem] text-white uppercase">&nbsp;Elegance</h3>
               </div> */}
+              {/* <SplitText
+                text="Hello, Tailwind!"
+                className="text-2xl text-white font-semibold text-center"
+                delay={50}
+                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                easing="easeOutCubic"
+                threshold={0.2}
+                rootMargin="-50px"
+                // onLetterAnimationComplete={handleAnimationComplete}
+                /> */}
             </div>
           </div>
       </div>
-    </>
+    </div>
   );
 }

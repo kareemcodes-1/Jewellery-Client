@@ -4,6 +4,7 @@ import { useStore } from "../../store/store";
 import { CartItem, Product } from "../../types/types";
 import toast from "react-hot-toast";
 import Loading from "../loading";
+import FadeContent from "@/utils/fade-content";
 
 interface ProductCardProps {
   product: Product;
@@ -77,6 +78,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         )}
         </div>
 
+      <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
       <div className=" flex flex-col gap-2 text-center items-center justify-center relative swiper-product-lg">
         <a href={`/products/${product._id}`} className="w-full h-[400px]">
           <img
@@ -114,6 +116,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         )}
       </div>
+      </FadeContent>
     </>
   );
 };

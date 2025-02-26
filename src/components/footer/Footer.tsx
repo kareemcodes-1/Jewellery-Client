@@ -1,5 +1,34 @@
+import FadeContent from "@/utils/fade-content";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
-export default function Footer() {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Footer() {  
+    const ref = useRef<HTMLImageElement | null>(null);
+  
+    useEffect(() => {
+      if(ref){
+        gsap.fromTo(
+          ref.current,
+          { scale: 1.3 },// Start state
+          {
+            scale: 1,
+            duration: 1,
+            delay: 0.54,
+            ease: "easeInOut",
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+              markers: false,
+            },
+          }
+        );
+      }
+    }, [ref]);
   return (
     <>
       <footer className="footer pt-[2rem]">
@@ -15,32 +44,52 @@ export default function Footer() {
                   CHI LUXURY
                 </a>
 
-                <div
-                  className="mt-[.5rem] lg:w-[400px] uppercase lg:text-[.9rem] text-[.8rem] tracking-[.05rem]"
-                  id="footer-text"
-                >
-                  The best store to find all your unique and quality
-                  jewelleries, we're unique in every way.
-                </div>
+                <FadeContent className="mt-[.5rem] lg:w-[400px] uppercase lg:text-[.9rem] text-[.8rem] tracking-[.05rem]" duration={1000} easing="ease-out" initialOpacity={0}>
+                The best store to find all your unique and quality
+                jewelleries, we're unique in every way
+               </FadeContent>
               </div>
 
               <div className="flex items-start lg:gap-[4rem] flex-row gap-[1rem] lg:mb-0 mb-[1.5rem]">
                 <div id="footer-text">
                   <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[1.4rem] gap-[1rem] manrope">
+
+                    <FadeContent  duration={1000} easing="ease-out" initialOpacity={0}>
                     <a href="/">HOME</a>
-                    <a href="/about">ABOUT US</a>
-                    <a href="/contact">CONTACT US</a>
-                    <a href="/products">PRODUCTS</a>
+                   </FadeContent>
+                   <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+                   <a href="/about">ABOUT US</a>
+                   </FadeContent>
+                   <FadeContent  duration={1000} easing="ease-out" initialOpacity={0}>
+                   <a href="/contact">CONTACT US</a>
+                   </FadeContent>
+                   <FadeContent  duration={1000} easing="ease-out" initialOpacity={0}>
+                   <a href="/products">PRODUCTS</a>
+                   </FadeContent>
                   </div>
                 </div>
 
                 <div id="footer-text">
                   <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[1.4rem] gap-[1rem] manrope uppercase">
-                    <a href="">Instagram</a>
+                    {/* <a href="">Instagram</a>
                     <a href="">Facebook</a>
                     <a href="">Tiktok</a>
-                    <a>Delivery & Returns</a>
-                    <a>Vip Access</a>
+                    <a>Delivery & Returns</a> */}
+                    <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+                    <a href="">Instagram</a>
+                   </FadeContent>
+                   <FadeContent  duration={1000} easing="ease-out" initialOpacity={0}>
+                   <a href="">Facebook</a>
+                   </FadeContent>
+                   <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+                   <a href="">Tiktok</a>
+                   </FadeContent>
+                   <FadeContent  duration={1000} easing="ease-out" initialOpacity={0}>
+                   <a>Delivery & Returns</a>
+                   </FadeContent>
+                   <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+                   <a>Vip Access</a>
+                   </FadeContent>
                   </div>
                 </div>
               </div>
@@ -51,7 +100,7 @@ export default function Footer() {
                 src={"/footer.jpg"}
                 alt=""
                 className="h-[400px] w-full object-cover"
-                id="footer-img"
+                ref={ref}
               />
             </div>
           </div>
@@ -59,12 +108,19 @@ export default function Footer() {
           <div className="flex lg:flex-row flex-col lg:items-center gap-[.5rem] justify-between">
             <div className="flex lg:flex-row flex-col lg:items-center lg:gap-[1.5rem] gap-[.5rem] lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">
 
-              <div id="footer-text">Terms + Conditions</div>
+              <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+              <div >Terms + Conditions</div>
+               </FadeContent>
 
-              <div id="footer-text">Privacy Policy</div>
+              <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+                <div>Privacy Policy</div>
+               </FadeContent>
             </div>
 
-            <div id="footer-text" className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© Chi Luxury 2024.</div>
+            {/* <div id="footer-text" className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© Chi Luxury 2024.</div> */}
+            <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+                <div className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© Chi Luxury 2024.</div>
+             </FadeContent>
 
           </div>
         </div>
