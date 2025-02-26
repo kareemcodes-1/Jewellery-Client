@@ -2,8 +2,8 @@ import { Collection } from "../../types/types";
 import { useEffect, useState, useRef } from "react";
 import { useStore } from "../../store/store";
 import SplitText from "@/utils/split-text";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -19,8 +19,8 @@ const Collections = () => {
     fetch(`${import.meta.env.VITE_SERVER_URL}/api/collections`, {
       method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-      }
+        "Content-Type": "application/json",
+      },
     })
       .then((res) => res.json())
       .then((data) => setCollections(data))
@@ -30,7 +30,7 @@ const Collections = () => {
 
   useEffect(() => {
     // Iterate through each image ref and apply animation individually
-    imageRefs.current.forEach((ref,) => {
+    imageRefs.current.forEach((ref) => {
       if (ref) {
         gsap.fromTo(
           ref,
@@ -55,9 +55,10 @@ const Collections = () => {
 
   return (
     <div className="lg:grid grid-cols-2">
-      {collections.map((collection: Collection, index) => (
-        loading ? 
-          <Skeleton key={collection._id} className="w-full h-[500px]" /> : 
+      {collections.map((collection: Collection, index) =>
+        loading ? (
+          <Skeleton key={collection._id} className="w-full h-[500px]" />
+        ) : (
           <a
             href={`/collections/${collection._id}`}
             key={collection._id}
@@ -74,15 +75,19 @@ const Collections = () => {
                 className="w-full h-full object-cover collection-img"
               />
             </div>
-            <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1rem] flex items-center gap-[.5rem] uppercase font-semibold manrope tracking-[.2rem] w-full">
+            <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1rem] flex items-center gap-[.5rem] uppercase font-semibold manrope tracking-[.2rem] flex-nowrap">
               <SplitText
                 text={`Shop ${collection.name}`}
                 delay={50}
-                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                animationFrom={{
+                  opacity: 0,
+                  transform: "translate3d(0,50px,0)",
+                }}
+                animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
                 threshold={0.2}
                 rootMargin="-50px"
-                className="uppercase font-semibold manrope tracking-[.2rem]" />
+                className="uppercase font-semibold manrope tracking-[.2rem] whitespace-nowrap" // Prevent text from wrapping
+              />
               <div className="flex">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +106,8 @@ const Collections = () => {
               </div>
             </div>
           </a>
-      ))}
+        )
+      )}
     </div>
   );
 };
