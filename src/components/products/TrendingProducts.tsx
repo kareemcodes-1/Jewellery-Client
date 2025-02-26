@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useStore } from "../../store/store";
 import ProductSwiper from '../swipers/ProductSwiper'
 import SplitText from "@/utils/split-text";
+import Skeleton from "react-loading-skeleton";
 
 const TrendingProducts = () => {
 
@@ -33,7 +34,9 @@ const TrendingProducts = () => {
                 threshold={0.2}
                 rootMargin="-50px" className="lg:text-[5rem] text-[2.5rem] mb-[1rem] font-medium lg:text-start text-center ginger flex lg:items-start items-center lg:justify-start justify-center" />
       {!products || products.length === 0 ? (
-        <p className="text-body-bold">No products found</p>
+         <div className="lg:grid flex flex-col grid-cols-3 gap-[1rem]">
+                    <Skeleton className="h-[350px] w-[400px]"/>
+          </div>
       ) : (
         <ProductSwiper loading={loading} products={products} />
       )}
