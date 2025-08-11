@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Collections = () => {
   const { collections, setCollections } = useStore();
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]); // Create an array of refs
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const Collections = () => {
   }, [collections]);
 
   return (
-    <div className="lg:grid grid-cols-2">
+    <div className={`lg:grid grid-cols-2 ${loading && 'gap-[1rem]'}`}>
       {collections.map((collection: Collection, index) =>
         loading ? (
           <Skeleton key={collection._id} className="w-full h-[500px]" />
@@ -75,7 +75,7 @@ const Collections = () => {
                 className="w-full h-full object-cover collection-img"
               />
             </div>
-            <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1rem] flex items-center gap-[.5rem] uppercase font-semibold manrope tracking-[.2rem] flex-nowrap">
+            <div className="absolute bottom-[1.5rem] lg:right-[2rem] left-[1.5rem] text-white lg:text-[1.2rem] text-[1rem] flex items-center gap-[.5rem] uppercase font-normal manrope tracking-[.2rem] flex-nowrap">
               <SplitText
                 text={`Shop ${collection.name}`}
                 delay={50}
@@ -86,7 +86,7 @@ const Collections = () => {
                 animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
                 threshold={0.2}
                 rootMargin="-50px"
-                className="uppercase font-semibold manrope tracking-[.2rem] whitespace-nowrap" // Prevent text from wrapping
+                className="uppercase font-medium manrope tracking-[.2rem] whitespace-nowrap" // Prevent text from wrapping
               />
               <div className="lg:flex hidden">
                 <svg

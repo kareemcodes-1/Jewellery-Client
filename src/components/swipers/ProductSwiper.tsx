@@ -11,6 +11,8 @@ import 'react-loading-skeleton/dist/skeleton.css'
 // import ProductCard from "../ProductCard";
 
 const ProductSwiper = ({ products, loading }: { products: Product[], loading: boolean }) => {
+  const placeholderArray = Array(3).fill(null); // number of skeleton slides you want
+
   return (
     <>
       <Swiper
@@ -20,13 +22,18 @@ const ProductSwiper = ({ products, loading }: { products: Product[], loading: bo
         }}
         slidesPerView={3}
         loop={true}
+        //  spaceBetween={10}
         navigation={true}
         modules={[Navigation, Autoplay]}
         className="mySwiper swiper-product-lg"
       >
-        {products.map((product: Product) => (
-          <SwiperSlide key={product._id}>
-            {loading ? <Skeleton className="h-[350px] w-[400px]"/> : <ProductCard product={product} />}
+        {(loading ? placeholderArray : products).map((product: Product | null, idx) => (
+          <SwiperSlide key={product?._id || idx}>
+            {loading ? (
+              <Skeleton className="h-[350px] !w-[400px]" style={{ borderRadius: '1rem' }}/>
+            ) : (
+              product && <ProductCard product={product} />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
@@ -42,14 +49,19 @@ const ProductSwiper = ({ products, loading }: { products: Product[], loading: bo
         modules={[Navigation, Autoplay]}
         className="mySwiper swiper-product-sm"
       >
-        {products.map((product: Product) => (
-          <SwiperSlide key={product._id}>
-            <ProductCard product={product} />
+        {(loading ? placeholderArray : products).map((product: Product | null, idx) => (
+          <SwiperSlide key={product?._id || idx}>
+            {loading ? (
+              <Skeleton className="h-[350px] w-[400px]" />
+            ) : (
+              product && <ProductCard product={product} />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
     </>
   );
 };
+
 
 export default ProductSwiper;

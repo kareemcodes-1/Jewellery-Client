@@ -46,7 +46,7 @@ export default function NavbarHome() {
         }
       >
         <nav
-          className="flex items-center justify-between text-[1.4rem]"
+          className="flex items-center justify-between text-[1.4rem] font-medium"
         >
 
             <div className="flex items-center justify-center gap-[1.5rem]">
@@ -54,7 +54,7 @@ export default function NavbarHome() {
                 MENU
               </div> */}
 
-         <div onClick={() => setOpenMenuModal(true)} className=" lg:block hidden  nav-open cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+         <div onClick={() => setOpenMenuModal(true)} className=" lg:block hidden  nav-open cursor-pointer text-[1.1rem] tracking-[.3rem]">
           <AnimatedContent
             distance={20}
             direction="vertical"
@@ -85,7 +85,7 @@ export default function NavbarHome() {
             </AnimatedContent>
               </div>
 
-          <a href={"/about"} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+          <a href={"/about"} className="lg:block hidden cursor-pointer text-[1.1rem]  tracking-[.3rem]">
               <AnimatedContent
             distance={20}
             direction="vertical"
@@ -118,7 +118,7 @@ export default function NavbarHome() {
             scale={1.1}
             threshold={0.2}
           >
-              CHI LUXURY
+              AURORA
           </AnimatedContent>
             </a>
           </div>
@@ -126,7 +126,7 @@ export default function NavbarHome() {
             <div className="flex items-center justify-center gap-[2rem]">
               <a
                 onClick={() => setOpenCartModal(true)}
-                className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]"
+                className="lg:block hidden cursor-pointer text-[1.1rem] tracking-[.3rem]"
               >
                 <AnimatedContent
             distance={20}
@@ -155,7 +155,7 @@ export default function NavbarHome() {
               <ShoppingCart className="lg:hidden block cursor-pointer" onClick={() => setOpenCartModal(true)}/>
               </AnimatedContent> 
 
-              <div onClick={() => setOpenSearchModal(true)} className="lg:block hidden search cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <div onClick={() => setOpenSearchModal(true)} className="lg:block hidden search cursor-pointer text-[1.1rem]  tracking-[.3rem]">
               <AnimatedContent
             distance={20}
             direction="vertical"
@@ -171,7 +171,7 @@ export default function NavbarHome() {
               </div>
 
 
-              <Link to={`${userInfo ? '/profile' : '/login'}`} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <Link to={`${userInfo ? '/profile' : '/login'}`} className="lg:block hidden cursor-pointer text-[1.1rem] tracking-[.3rem]">
               <AnimatedContent
             distance={20}
             direction="vertical"
@@ -199,7 +199,7 @@ export default function NavbarHome() {
               CLOSE
             </div>
             <div className="flex items-center gap-[1rem]">
-              <div className="flex flex-col gap-[3rem] font-bold mt-[10rem] text-[1.5rem] mx-[1.5rem]">
+              <div className="flex flex-col gap-[3rem] font-medium mt-[10rem] text-[1.5rem] mx-[1.5rem]">
                 <a href="/" className="nav-link">
                   HOME
                 </a>

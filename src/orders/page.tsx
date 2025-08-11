@@ -39,12 +39,11 @@ const OrderPage = () => {
 
   return (
       <Layout>
-          <div className='mt-[5rem] px-[1.5rem] text-[4rem] mb-[2rem]'>
+          <div className='mt-[5rem] px-[1.5rem] text-[4rem] mb-[2rem] w-full'>
              <h1 className='text-black lg:text-[4rem] text-[2.5rem]'>YOUR ORDERS</h1>
-
+            {orders.length > 0 ? (
              <div className='lg:grid grid-cols-3 gap-[1rem] mt-[1rem]'>
-                 {orders.length > 0 ? (
-                    orders.map((order) => (
+                    {orders.map((order) => (
                         <div className='border p-[.5rem]'>
                               {order.products.map((product) => (
                                  <div className='flex items-start justify-between'>
@@ -66,12 +65,13 @@ const OrderPage = () => {
                               ))}
                         </div>
                     ))
-                 ) : (
-                    <div className='text-[1rem]'>
-                      No Orders.
-                    </div>
-                 )}
+                  }
+             
              </div>
+                 ) :                    
+                 <div className='text-[1.2rem] my-[8rem] text-center flex items-center justify-center mx-auto uppercase manrope uppercase tracking-[.2rem]'>
+                      No Orders.
+              </div>}
         </div>
       </Layout>
   )

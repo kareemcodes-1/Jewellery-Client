@@ -31,11 +31,11 @@ const AboutPage = () => {
 
             <div>
               <h2 className="text-[1.5rem] font-semibold tracking-[.2rem] manrope " id="about-text">
-                JEWELLRY <span className="font-mono">//</span> CHIOMA
+                WE ARE ALL ABOUT ELEGANCE
               </h2>
               <p id="about-text" className="uppercase text-[.925rem]">
-                Designer + Founder Chioma is based in her studio in Nigeria.
-                Chioma received her formal training at the prestigious Central
+                Designer + Founder Aurora is based in her studio in the UK.
+                Aurora received her formal training at the prestigious Central
                 Saint Martins College of Art and Design, graduating with a BA in
                 Jewellery Design in 2015. Chioma has gained accolades
                 recognising her work as a designer. Featuring in magazines such
@@ -43,7 +43,7 @@ const AboutPage = () => {
                 well as exhibiting at the V&A. After graduating she moved to New
                 York, working for Tiffany & Co. creating jewellery collections
                 within the luxury corporate fashion world. After eight years in
-                the industry as a designer, Chioma has launched Phoria with the
+                the industry as a designer, Chioma has launched Aurora with the
                 vision to create a quality line of jewellery made up of the
                 ultimate staples that can be worn in multiple ways – designed to
                 be redesigned. All chi luxury pieces are fully designed by

@@ -28,7 +28,7 @@ export default function NavbarHome() {
       >
         <nav className="flex items-center justify-between text-[1rem] text-black">
            <div className="flex items-center justify-center gap-[1.5rem]">
-              <div onClick={() => setOpenMenuModal(true)} className=" lg:block hidden  nav-open cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <div onClick={() => setOpenMenuModal(true)} className=" lg:block hidden  nav-open cursor-pointer text-[1.1rem] font-medium tracking-[.3rem]">
                 MENU
               </div>
 
@@ -36,7 +36,7 @@ export default function NavbarHome() {
                 <Menu onClick={() => setOpenMenuModal(true)}  className="nav-open lg:w-[1.2rem] xs:text-[1rem] w-[1.2rem]" />
               </div>
 
-              <a href={"/about"} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <a href={"/about"} className="lg:block hidden cursor-pointer text-[1.1rem] font-medium tracking-[.3rem]">
                 ABOUT
               </a>
             </div>
@@ -47,25 +47,25 @@ export default function NavbarHome() {
               id="nav"
               className="flex lg:text-[1.8rem] xs:text-[1rem] text-[1.2rem] items-center justify-center lg:ml-[5rem] ml-0 font-semibold tracking-[.3rem]"
             >
-              CHI LUXURY
+              AURORA
             </a>
           </div>
 
           <div className="flex items-center justify-center gap-[2rem]">
               <a
                 onClick={() => setOpenCartModal(true)}
-                className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]"
+                className="lg:block hidden cursor-pointer text-[1.1rem] font-medium tracking-[.3rem]"
               >
                 CART ({cart.length})
               </a>
 
               <ShoppingCart className="lg:hidden block cursor-pointer" onClick={() => setOpenCartModal(true)}/>
 
-              <div onClick={() => setOpenSearchModal(true)} className="lg:block hidden search cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <div onClick={() => setOpenSearchModal(true)} className="lg:block hidden search cursor-pointer text-[1.1rem] font-medium tracking-[.3rem]">
                 SEARCH
               </div>
 
-              <Link to={`${userInfo ? '/profile' : '/login'}`} className="lg:block hidden cursor-pointer text-[1.1rem] font-semibold tracking-[.3rem]">
+              <Link to={`${userInfo ? '/profile' : '/login'}`} className="lg:block hidden cursor-pointer text-[1.1rem] font-medium tracking-[.3rem]">
                 ACCOUNT
               </Link>
 

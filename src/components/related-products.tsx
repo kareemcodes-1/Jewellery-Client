@@ -22,22 +22,22 @@ const RelatedProducts = () => {
     })();
   }, [setProducts]);
 
-  const relatedProducts = products.slice(0, 3); 
+  const relatedProducts = products.slice(5, 9); 
 
   return (
-    <div className="flex flex-col mb-[2rem]">
-      <h2 className="lg:text-[5rem] text-[2.5rem] font-medium mb-[1rem] lg:text-start lg:px-[2rem] text-center">
+    <div className="flex flex-col mb-[2rem] px-[2rem]">
+      <h2 className="lg:text-[5rem] text-[2.5rem] font-medium mb-[1rem] lg:text-start text-center">
         Related Products
       </h2>
-      <div className="lg:grid flex flex-col grid-cols-3 lg:gap-[1rem] gap-[2rem]">
+      <div className="flex lg:flex-row flex-col items-start justify-start w-full  lg:gap-[1rem] gap-[2rem]">
         {loading
           ? 
-            [1, 2, 3].map((_, index) => (
-              <Skeleton key={index} className="h-[350px] w-[400px]" />
+            [1, 2, 3, 4].map((_, index) => (
+              <Skeleton key={index} className="h-[350px] lg:!w-[350px] !w-[320px]" />
             ))
           : 
-            relatedProducts.map((product) => (
-              <ProductCard product={product} />
+            relatedProducts.map((product, index) => (
+              <ProductCard product={product} key={index}/>
             ))}
       </div>
     </div>

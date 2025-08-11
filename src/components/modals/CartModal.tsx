@@ -87,7 +87,7 @@ const CartModal = () => {
               </div>
             ))
           ) : (
-              <span className="text-center flex items-center font-semibold text-black tracking-[.2rem]  justify-center mt-[10rem]">CART IS EMPTY.</span>
+              <span className="text-center  text-[1.2rem] flex items-center font-semibold text-black tracking-[.2rem]  justify-center mt-[15rem]">CART IS EMPTY.</span>
           )}
 
           {cart.length > 0 && (

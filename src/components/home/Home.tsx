@@ -49,7 +49,7 @@ export default function HomePage() {
                 animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
                 // easing="easeOutCubic"
                 threshold={0.2}
-                rootMargin="0px" className="lg:text-[1.1rem] text-[1rem] lg:tracking-[.5rem] tracking-[.3rem] font-semibold manrope uppercase" />
+                rootMargin="0px" className="lg:text-[1.1rem] font-medium text-[1rem] lg:tracking-[.5rem] tracking-[.3rem] manrope uppercase" />
                 </div>
 
                 <div className=" flex">

@@ -86,7 +86,7 @@ const MenuModal = ({
 
       <div className="flex flex-col gap-[1rem]">
       <div className="flex items-start flex-col p-[1rem] mt-[10rem] gap-[1rem]">
-          <ul className="flex flex-col text-[3rem] font-medium tracking-[.2rem]">
+          <ul className="flex flex-col text-[3.5rem] font-medium tracking-[.2rem]">
                <a href="/" className="nav-links">HOME</a>
                 <a href="/products" className="nav-links">PRODUCTS</a>
                <a onClick={openSearch} className="nav-links cursor-pointer">SEARCH</a>

@@ -50,7 +50,8 @@ const ProfilePage = () => {
                         headers: {
                             "Content-Type": "application/json"
                         },
-                        body: JSON.stringify(data)
+                        body: JSON.stringify(data),
+                        credentials: "include"
                     });
         
                     if(res.ok){
@@ -72,28 +73,28 @@ const ProfilePage = () => {
     }
   return (
     <Layout>
-         <div className='lg:mx-[2rem] p-[1rem] mt-[3rem] rounded-[.5rem] flex flex-col'>
+         <div className='lg:mx-[1rem] p-[1rem] mt-[3rem] rounded-[.5rem] flex flex-col'>
                 <h1 className='lg:text-[4rem] text-[3rem] lg:my-[1rem] my-[.5rem] uppercase'>Your Profile</h1>
              
               <form action={updateUser} className='flex flex-col gap-[1rem] mt-[1rem]'>
                   <div className='flex flex-col'>
                        <label className='text-[1rem] pb-[.2rem] uppercase tracking-[.1rem] font-semibold' htmlFor='name'>Name</label>
-                       <input type="text" name="name" value={name} id="name" onChange={(e) => setName(e.target.value)} className='border border-black p-[.5rem] lg:w-[50%] w-full uppercase tracking-[.1rem]'/>
+                       <input type="text" name="name" value={name} id="name" onChange={(e) => setName(e.target.value)} className='border-b outline-none border-black p-[.5rem] lg:w-[50%] w-full uppercase tracking-[.1rem]'/>
                   </div>
 
                   <div className='flex flex-col'>
                        <label className='text-[1rem] pb-[.2rem] uppercase tracking-[.1rem] font-semibold' htmlFor='email'>Email</label>
-                       <input type="text" name="email" value={email} id="email" onChange={(e) => setEmail(e.target.value)} className='border border-black p-[.5rem] lg:w-[50%] w-full uppercase tracking-[.1rem]'/>
+                       <input type="text" name="email" value={email} id="email" onChange={(e) => setEmail(e.target.value)} className='border-b outline-none border-black p-[.5rem] lg:w-[50%] w-full uppercase tracking-[.1rem]'/>
                   </div>
 
                   <div className='flex flex-col'>
                        <label className='text-[1rem] pb-[.2rem] uppercase tracking-[.1rem] font-semibold' htmlFor='old_password'>Old Password</label>
-                       <input value={oldPassword} type="password" name="old_password" id="old_password" className='border border-black p-[.5rem] lg:w-[50%] w-full' onChange={(e) => setOldPassword(e.target.value)} />
+                       <input value={oldPassword} type="password" name="old_password" id="old_password" className='border-b outline-none border-black p-[.5rem] lg:w-[50%] w-full' onChange={(e) => setOldPassword(e.target.value)} />
                   </div>
 
                   <div className='flex flex-col'>
                        <label className='text-[1rem] pb-[.2rem] uppercase tracking-[.1rem] font-semibold' htmlFor='password'>New Password</label>
-                       <input type="password" value={password} name="password" id="password" className='border border-black p-[.5rem] lg:w-[50%] w-full ' onChange={(e) => setPassword(e.target.value)} />
+                       <input type="password" value={password} name="password" id="password" className='border-b outline-none border-black p-[.5rem] lg:w-[50%] w-full ' onChange={(e) => setPassword(e.target.value)} />
                   </div>
 
                   <SubmitBtn />

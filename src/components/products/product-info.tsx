@@ -71,8 +71,8 @@ const ProductInfo = ({ productInfo, loading }: { productInfo: Product, loading: 
       {loading ? <Skeleton className="!w-[40%] h-[2rem]"/> : (
         
       <div className="flex justify-between items-center gap-[1rem]">
-      <h2 className="lg:flex hidden gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name} <span className="font-thin !text-gray-500">|</span> <p className="text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p></h2>
-      <h2 className="lg:hidden block gap-[.5rem] text-[1.5rem] font-semibold manrope text-black uppercase tracking-[.2rem]">{productInfo.name}</h2>
+      <h2 className="lg:flex hidden gap-[.5rem] text-[1.5rem] font-medium manrope text-black  uppercase tracking-[.2rem]">{productInfo.name} <span className="font-thin !text-gray-500">|</span> <p className="text-[1.5rem] font-bold">{formatCurrency(productInfo.price)}</p></h2>
+      <h2 className="lg:hidden block gap-[.5rem] text-[1.5rem] font-medium manrope text-black uppercase tracking-[.2rem]">{productInfo.name}</h2>
       {/* <HeartFavorite product={productInfo} /> */}
     </div>
       )}
@@ -148,13 +148,13 @@ const ProductInfo = ({ productInfo, loading }: { productInfo: Product, loading: 
       {productInfo?.inStock ? (
         <button
         onClick={() => handleAddToCart()}
-          className="outline text-[.8rem] font-bold uppercase tracking-[.4rem] py-3  bg-black text-white"
+          className="outline text-[.8rem] font-medium uppercase tracking-[.4rem] py-3  bg-black text-white"
         >
           Add To Cart
         </button>
       ) : (
         <button
-          className="cursor-not-allowed outline font-bold uppercase py-3 bg-black text-white opacity-[.8]"
+          className="cursor-not-allowed font-medium outline uppercase py-3 bg-black text-white opacity-[.8]"
           aria-disabled
         >
           Add To Cart

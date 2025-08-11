@@ -36,13 +36,15 @@ export default function Footer() {
           <div className="lg:grid lg:grid-cols-2 flex flex-col  mb-[2rem]">
             <div>
               <div className="mb-[3rem]">
-                <a
+              <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
+              <a
                   href={"/"}
                   className="lg:text-[1.2rem] text-[1rem] font-bold mb-[3rem] tracking-[.3rem] "
-                  id="footer-text"
                 >
-                  CHI LUXURY
+                  AURORA
                 </a>
+               </FadeContent>
+
 
                 <FadeContent className="mt-[.5rem] lg:w-[400px] uppercase lg:text-[.9rem] text-[.8rem] tracking-[.05rem]" duration={1000} easing="ease-out" initialOpacity={0}>
                 The best store to find all your unique and quality
@@ -119,7 +121,7 @@ export default function Footer() {
 
             {/* <div id="footer-text" className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© Chi Luxury 2024.</div> */}
             <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
-                <div className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© Chi Luxury 2024.</div>
+                <div className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© AURORA 2024.</div>
              </FadeContent>
 
           </div>

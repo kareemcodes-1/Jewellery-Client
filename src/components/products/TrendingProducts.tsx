@@ -8,10 +8,9 @@ import Skeleton from "react-loading-skeleton";
 const TrendingProducts = () => {
 
     const {products, setProducts} = useStore();
-     const [loading, setLoading] = useState<boolean>(false);
+     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-         setLoading(true);
          fetch(`${import.meta.env.VITE_SERVER_URL}/api/products`, {
           method: "GET",
           headers: {
