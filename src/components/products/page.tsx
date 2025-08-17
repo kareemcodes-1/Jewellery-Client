@@ -37,7 +37,7 @@ const AllProducts = () => {
   return (
     <Layout>
         <div className='lg:mt-[5rem] mt-[4rem] mx-[1.5rem]'>
-            <h1 className='text-[4rem] text-start'>Products</h1>
+            <h1 className='text-[4rem] text-start'>All Products</h1>
             <div className='lg:grid grid-cols-3 flex flex-col gap-[1rem]'>
                 {products.map((product) => (
                     <ProductCard product={product}/>

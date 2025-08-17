@@ -34,19 +34,19 @@ const AboutPage = () => {
                 WE ARE ALL ABOUT ELEGANCE
               </h2>
               <p id="about-text" className="uppercase text-[.925rem]">
-                Designer + Founder Aurora is based in her studio in the UK.
-                Aurora received her formal training at the prestigious Central
+                Designer + Founder Veloura is based in her studio in the UK.
+                Veloura received her formal training at the prestigious Central
                 Saint Martins College of Art and Design, graduating with a BA in
-                Jewellery Design in 2015. Chioma has gained accolades
+                Jewellery Design in 2015. Veloura has gained accolades
                 recognising her work as a designer. Featuring in magazines such
                 as Harper’s Bazaar, British Vogue and the Sunday Telegraph as
                 well as exhibiting at the V&A. After graduating she moved to New
                 York, working for Tiffany & Co. creating jewellery collections
                 within the luxury corporate fashion world. After eight years in
-                the industry as a designer, Chioma has launched Aurora with the
+                the industry as a designer, We launched Veloura with the
                 vision to create a quality line of jewellery made up of the
                 ultimate staples that can be worn in multiple ways – designed to
-                be redesigned. All chi luxury pieces are fully designed by
+                be redesigned. All Veloura pieces are fully designed by
                 Charlotte in her studio, and handmade ethically by craftsman in
                 thailand using sustainable materials.
               </p>

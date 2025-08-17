@@ -47,7 +47,7 @@ export default function NavbarHome() {
               id="nav"
               className="flex lg:text-[1.8rem] xs:text-[1rem] text-[1.2rem] items-center justify-center lg:ml-[5rem] ml-0 font-semibold tracking-[.3rem]"
             >
-              AURORA
+               VELOURA
             </a>
           </div>
 

@@ -118,7 +118,7 @@ export default function NavbarHome() {
             scale={1.1}
             threshold={0.2}
           >
-              AURORA
+            VELOURA
           </AnimatedContent>
             </a>
           </div>
