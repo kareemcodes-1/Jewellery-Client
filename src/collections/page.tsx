@@ -51,7 +51,7 @@ const CollectionDetails = () => {
       <div className="lg:mt-[5rem] mt-[3rem]">
         <div className="py-5 flex flex-col container-1">
           <div className="flex lg:flex-row flex-col lg:items-center items-start justify-between w-full">
-            <h1 className="lg:text-[5rem] text-[3rem] text-black">
+            <h1 className="lg:text-[4rem] text-[3rem] text-black uppercase antarctica font-[300]">
               {collection?.name} Collection
             </h1>
 

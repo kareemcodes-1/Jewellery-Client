@@ -22,7 +22,7 @@ const AboutPage = () => {
           <div className="about-grid lg:grid flex items-center flex-col gap-[2rem] grid-cols-2">
             <div className="overflow-hidden">
               <img
-                src={"https://i.pinimg.com/736x/ac/b3/22/acb322876b4673f5d5be8a8d38df799a.jpg"}
+                src={"https://img.sovajewels.com/resize_cache/imagick/iblock/540/960x1200q100-ci080t2a906y7gyggyirduycxgcxfst0.webp"}
                 alt="about-img"
                 className="w-full h-[500px] object-cover"
                 id="about-img"
@@ -30,15 +30,19 @@ const AboutPage = () => {
             </div>
 
             <div>
-              <h2 className="text-[1.5rem] font-semibold tracking-[.2rem] manrope " id="about-text">
+              <h2 className="text-[1.5rem] font-semibold tracking-[.2rem] ginger my-[1rem]" id="about-text">
                 WE ARE ALL ABOUT ELEGANCE
               </h2>
-              <p id="about-text" className="uppercase text-[.925rem]">
+             <div className=" leading-[1.5rem] flex flex-col gap-[2rem]">
+               <p id="about-text" className="uppercase text-[.925rem] font-[300] antarctica">
                 Designer + Founder Veloura is based in her studio in the UK.
                 Veloura received her formal training at the prestigious Central
                 Saint Martins College of Art and Design, graduating with a BA in
                 Jewellery Design in 2015. Veloura has gained accolades
-                recognising her work as a designer. Featuring in magazines such
+                recognising her work as a designer.
+              </p>
+              <p id="about-text" className="uppercase text-[.925rem] font-[300] antarctica">
+                 Featuring in magazines such
                 as Harper’s Bazaar, British Vogue and the Sunday Telegraph as
                 well as exhibiting at the V&A. After graduating she moved to New
                 York, working for Tiffany & Co. creating jewellery collections
@@ -50,6 +54,7 @@ const AboutPage = () => {
                 Charlotte in her studio, and handmade ethically by craftsman in
                 thailand using sustainable materials.
               </p>
+             </div>
             </div>
           </div>
         </div>

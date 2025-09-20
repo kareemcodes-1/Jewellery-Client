@@ -29,7 +29,7 @@ const RelatedProducts = () => {
       <h2 className="lg:text-[5rem] text-[2.5rem] font-medium mb-[1rem] lg:text-start text-center">
         Related Products
       </h2>
-      <div className="grid grid-cols-3 w-full  lg:gap-[1rem] gap-[2rem]">
+      <div className="lg:grid flex flex-col grid-cols-3 w-full  lg:gap-[1rem] gap-[2rem]">
         {loading
           ? 
             [1, 2, 3, 4].map((_, index) => (

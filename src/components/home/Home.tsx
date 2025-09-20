@@ -39,7 +39,7 @@ export default function HomePage() {
             <div className="flex flex-col items-end justify-end w-full">
               <a
                 href="/products"
-                className="text-white lg:mt-0 mt-[1rem] flex items-center font-semibold gap-[.5rem] lg:justify-center justify-start"
+                className="text-white lg:mt-0 mt-[1rem] flex items-center gap-[.5rem] lg:justify-center justify-start"
               >
                 <div className="overflow-hidden">
                 <SplitText 
@@ -49,24 +49,7 @@ export default function HomePage() {
                 animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
                 // easing="easeOutCubic"
                 threshold={0.2}
-                rootMargin="0px" className="lg:text-[1.1rem] font-medium text-[1rem] lg:tracking-[.5rem] tracking-[.3rem] manrope uppercase" />
-                </div>
-
-                <div className=" flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                    />
-                  </svg>
+                rootMargin="0px" className="lg:text-[1.1rem] font-normal text-[1rem] uppercase tracking-[.2rem] antarctica hover:underline" />
                 </div>
               </a>
 

@@ -86,24 +86,8 @@ const Collections = () => {
                 animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
                 threshold={0.2}
                 rootMargin="-50px"
-                className="uppercase font-medium manrope tracking-[.2rem] whitespace-nowrap" // Prevent text from wrapping
+                className="uppercase font-normal  tracking-[.2rem] whitespace-nowrap antarctica" // Prevent text from wrapping
               />
-              <div className="lg:flex hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                  />
-                </svg>
-              </div>
             </div>
           </a>
         )

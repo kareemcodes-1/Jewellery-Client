@@ -5,7 +5,7 @@ export default function CTA() {
     <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
     <Marquee
       pauseOnHover
-      className="flex items-center gap-[2rem] lg:text-[7rem] text-[5rem] my-[1.5rem] ginger"
+      className="flex items-center gap-[2rem] lg:text-[7rem] text-[5rem] ginger"
     >
       <div className="flex items-center gap-[1rem]">
         <div>SHOP WITH US TODAY</div>

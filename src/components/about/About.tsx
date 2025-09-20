@@ -35,17 +35,17 @@ const About = () => {
   return (
     <section className=" mt-[5rem] pb-[2rem]">
       <div className=" container-1 flex items-center lg:flex-row flex-col gap-[2rem]">
-        <div className="lg:w-[50%] w-auto overflow-hidden">
+        <div className="lg:w-[50%] w-full overflow-hidden">
           <img ref={ref}
             src={
-              "https://i.pinimg.com/736x/cb/91/0f/cb910fcc13499f79ed771cc31fe81fb5.jpg"
+              "https://framerusercontent.com/images/FpJkmcO1nccrgnuOzf2HY1gd9kc.png"
             }
-            className="w-full object-cover lg:h-[700px] h-[500px]"
+            className="w-full object-cover lg:h-[600px] h-[500px]"
             // id="about-img"
           />
         </div>
 
-        <div className="lg:w-[500px] w-auto">
+        <div className="lg:w-[50%] w-full">
 
               <SplitText
                 text="Designed to be Redesigned"
@@ -54,7 +54,7 @@ const About = () => {
                 animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
                 // easing="easeOutCubic"
                 threshold={0.2}
-                rootMargin="0px" className="text-[2rem] font-medium mb-[.5rem] ginger lg:leading-normal leading-[2.5rem]" />
+                rootMargin="0px" className="lg:text-[2.5rem] text-[2rem] lg:leading-[2.8rem] leading-[2.5rem] font-medium ginger uppercase" />
 
 
           <div className="overflow-hidden">
@@ -68,7 +68,7 @@ const About = () => {
             scale={1.1}
             threshold={0.2}
           >
-            <p className="my-[.5rem] uppercase text-black text-[.925rem] leading-[1.4rem]">
+            <p className=" uppercase text-black text-[.925rem] leading-[1.4rem] font-[200] lg:w-[500px]">
               The range is made up of the ultimate staples – designed to be
               redesigned, with a simple yet powerful aesthetic, and an
               urban-industrial edge{" "}
@@ -87,7 +87,7 @@ const About = () => {
             scale={1.1}
             threshold={0.2}
           >
-          <p className="my-[2rem] uppercase text-black text-[.925rem] leading-[1.4rem]">
+          <p className="my-[2rem] uppercase text-black text-[.925rem] leading-[1.4rem] font-[200]">
             Our pieces are sustainable in more ways than one. It’s not just down
             to the materials we use, but they’re transformable, meaning there’s
             never just one way to wear them. Their modular and versatile nature

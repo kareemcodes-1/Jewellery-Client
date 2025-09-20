@@ -67,7 +67,7 @@ const Register = () => {
 <div className="min-h-screen flex">
   <div className="flex flex-col justify-center w-full px-6 py-12 lg:px-8">
     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-      <h2 className=" mt-10 text-center text-[1rem] font-extrabold text-black manrope tracking-[.2rem] uppercase">
+      <h2 className=" mt-10 text-center text-[1.3rem] font-extrabold text-black tracking-[.2rem] uppercase">
         Sign up to your account
       </h2>
     </div>

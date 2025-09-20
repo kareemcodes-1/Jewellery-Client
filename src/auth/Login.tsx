@@ -71,7 +71,7 @@ const Login = () => {
 <div className="min-h-screen flex">
   <div className="flex flex-col justify-center w-full  px-6 py-12 lg:px-8">
     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-      <h2 className="mt-10 text-center text-[1rem] font-extrabold text-black manrope tracking-[.2rem]">
+      <h2 className="mt-10 text-center text-[1.3rem] font-extrabold text-black  tracking-[.2rem]">
         SIGN IN TO YOUR ACCOUNT
       </h2>
     </div>
@@ -79,7 +79,7 @@ const Login = () => {
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form className="space-y-6" action={formAction}>
         <div>
-          <Label htmlFor="email" className="uppercase tracking-[.1rem] font-semibold">Email address</Label>
+          <Label htmlFor="email" className="uppercase tracking-[.1rem] antarctica font-semibold">Email address</Label>
           <div className="mt-2">
             <Input  
                type="email"
@@ -90,11 +90,11 @@ const Login = () => {
 
         <div>
           <div className="flex items-center justify-between">
-            <Label htmlFor="password" className="uppercase tracking-[.1rem] font-semibold">Password</Label>
+            <Label htmlFor="password" className="uppercase tracking-[.1rem] antarctica font-semibold ">Password</Label>
             <div className="text-[.8rem]">
               <a
                 href="#"
-                className="uppercase tracking-[.1rem] font-semibold text-muted-foreground"
+                className="uppercase tracking-[.1rem] font-semibold text-muted-foreground antarctica"
               >
                 Forgot password?
               </a>
@@ -114,11 +114,11 @@ const Login = () => {
         </div>
       </form>
 
-      <p className="mt-10  uppercase text-center text-sm text-gray-500">
+      <p className="mt-10  uppercase text-center text-sm text-gray-500 antarctica">
         Dont have an account?{' '}
         <a
           href="/register"
-          className="font-semibold text-black underline"
+          className="font-semibold text-black underline antarctica"
         >
           Sign up
         </a>

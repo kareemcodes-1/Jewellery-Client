@@ -33,11 +33,12 @@ body,
 }
 
 @font-face {
-  font-family: "Gevaline Rounded";
-  src: url("../font/GevalineRounded-Regular_demo-BF678b08364da85.otf") format("opentype");
-  font-display: swap;
+    font-family: "AntarcticaVAR-Regular";
+    font-display: block;
+    src: url("../font/Antarctica-VF.woff2") format("woff2"),
+    url("../font/Antarctica-VF.ttf") format("truetype");
+    font-style: normal;
 }
-
 
 
 .nav-link{
@@ -54,14 +55,22 @@ body,
 
 body {
   background-image: url("/noise.png");
-  font-family: "Manrope", serif;
-  font-size: 500;
+  font-family: "AntarcticaVAR-Regular";
   height: 100vh;
   width: 100%;
+  overflow-x: hidden;
 }
 
-.manrope{
+/* .manrope{
   font-family: "Manrope", serif; 
+} */
+
+/* span{
+    font-family: "AntarcticaVAR-Regular";
+} */
+
+.antarctica{
+   font-family: "AntarcticaVAR-Regular";
 }
 
 .noto{

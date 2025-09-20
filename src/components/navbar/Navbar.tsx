@@ -106,7 +106,7 @@ export default function NavbarHome() {
             <a
               href={"/"}
               id="nav"
-              className="flex lg:text-[1.8rem] xs:text-[1rem] text-[1.2rem] items-center justify-center lg:ml-[5rem] ml-0 font-semibold tracking-[.3rem]"
+              className="uppercase flex lg:text-[1.8rem] xs:text-[1rem] text-[1.2rem] items-center justify-center lg:ml-[5rem] ml-0 font-medium tracking-[.3rem]"
             >
           <AnimatedContent
             distance={20}
@@ -118,7 +118,7 @@ export default function NavbarHome() {
             scale={1.1}
             threshold={0.2}
           >
-            VELOURA
+            Sparké
           </AnimatedContent>
             </a>
           </div>

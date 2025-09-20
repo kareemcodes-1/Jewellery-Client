@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { Trash } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import formatCurrency from "@/utils/formatCurrency";
 
 const CartModal = () => {
   const { cart, incrementQuantity, decrementQuantity, totalAmount, deleteCartItem, deleteAllCartItems, openCartModal, setOpenCartModal } = useStore();
@@ -40,7 +41,7 @@ const CartModal = () => {
       <div className="flex h-full">
 
         <div className="w-full h-full sticky top-0">
-          <h1 className="lg:text-[1.1rem] text-[1rem] p-[1rem] manrope font-semibold tracking-[.3rem]">BASKET</h1>
+          <h1 className="lg:text-[1.1rem] text-[1rem] p-[1rem] antarctica font-semibold tracking-[.3rem]">BASKET</h1>
           <div
             className="absolute right-[1rem] top-[1rem] lg:text-[1.1rem] text-[1rem] font-semibold cursor-pointer manrope uppercase tracking-[.3rem]"
             onClick={() => setOpenCartModal(false)}
@@ -55,27 +56,27 @@ const CartModal = () => {
                   <img
                     src={item.product.images[0]}
                     alt=""
-                    className="w-[5rem] h-[5rem] object-cover"
+                    className="w-[5rem] h-[5rem] object-cover border shadow-sm"
                   />
   
-                  <div>
-                    <h1 className="text-[.8rem] tracking-[.2rem] font-semibold manrope uppercase text-black">{item.product.name}</h1>
+                  <div className="lg:leading-none leading-[1.5rem]">
+                    <h1 className="text-[.8rem] tracking-[.2rem] font-semibold antarctica uppercase text-black">{item.product.name}</h1>
 
-                    <p className="text-[1rem] font-semibold">${item.product.price}</p>
+                    <p className="text-[1rem] font-medium">{formatCurrency(item.product.price)}</p>
                   </div>
                 </div>
   
                 <div className="flex items-center gap-[.5rem]">
-                <div className="rounded-[1rem] flex items-center justify-center w-[4rem] gap-[.5rem] p-[.5rem] h-[2.2rem]  ">
+                <div className="rounded-[1rem] flex items-center justify-center w-[4rem] gap-[.5rem]  h-[2.2rem]  ">
                   <button
-                    className="text-[1.5rem] manrope font-light"
+                    className="text-[2rem] antarctica font-light"
                     onClick={() => decrementQuantity(item.product._id)}
                   >
                     -
                   </button>
                   <div className="text-[1rem]">{item.quantity}</div>
                   <button
-                    className="text-[1.5rem] manrope font-light"
+                    className="text-[1.5rem] antarctica font-light"
                     onClick={() => incrementQuantity(item.product._id)}
                   >
                     +
@@ -87,17 +88,17 @@ const CartModal = () => {
               </div>
             ))
           ) : (
-              <span className="text-center  text-[1.2rem] flex items-center font-semibold text-black tracking-[.2rem]  justify-center mt-[15rem]">CART IS EMPTY.</span>
+              <span className="text-center antarctica text-[1.2rem] flex items-center font-[400] text-black tracking-[.2rem]  justify-center mt-[15rem]">CART IS EMPTY.</span>
           )}
 
           {cart.length > 0 && (
             <div className="absolute bottom-0 w-full">
             <div className="w-full">
                 <div className="py-[.5rem] px-[1rem] flex items-center justify-between">
-                 <h2 className="text-[1rem] manrope font-semibold uppercase">Grand Total</h2>
+                 <h2 className="text-[1rem] antarctica font-semibold uppercase">Grand Total</h2>
 
                 <div>
-                    <p className="text-[1.3rem] font-semibold">${totalAmount}</p>
+                    <p className="text-[1.2rem] font-medium antarctica">{formatCurrency(totalAmount)}</p>
                 </div>
                 </div>
             </div>

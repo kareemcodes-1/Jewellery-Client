@@ -31,7 +31,7 @@ export default function Footer() {
     }, [ref]);
   return (
     <>
-      <footer className="footer lg:pt-[8rem] pt-[2rem]">
+      <footer className="footer lg:pt-[4rem] pt-[2rem]">
         <div className="footer_container container-1 mx-[1.5rem]">
           <div className="lg:grid lg:grid-cols-2 flex flex-col  mb-[2rem]">
             <div>
@@ -39,14 +39,14 @@ export default function Footer() {
               <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
               <a
                   href={"/"}
-                  className="lg:text-[1.2rem] text-[1rem] font-bold mb-[3rem] tracking-[.3rem] "
+                  className="lg:text-[1.2rem] text-[1rem] font-medium mb-[3rem] tracking-[.3rem] uppercase"
                 >
-                  VELOURA
+                  Sparké
                 </a>
                </FadeContent>
 
 
-                <FadeContent className="mt-[.5rem] lg:w-[400px] uppercase lg:text-[.9rem] text-[.8rem] tracking-[.05rem]" duration={1000} easing="ease-out" initialOpacity={0}>
+                <FadeContent className="mt-[.5rem] lg:w-[400px] uppercase lg:text-[.9rem] text-[.8rem] tracking-[.05rem] font-[200]" duration={1000} easing="ease-out" initialOpacity={0}>
                 The best store to find all your unique and quality
                 jewelleries, we're unique in every way
                </FadeContent>
@@ -72,7 +72,7 @@ export default function Footer() {
                 </div>
 
                 <div id="footer-text">
-                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold lg:gap-[1.4rem] gap-[1rem] manrope uppercase">
+                  <div className="flex items-start flex-col lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-medium lg:gap-[1.4rem] gap-[1rem] antarctica  uppercase">
                     {/* <a href="">Instagram</a>
                     <a href="">Facebook</a>
                     <a href="">Tiktok</a>
@@ -99,7 +99,7 @@ export default function Footer() {
 
             <div className="overflow-hidden">
               <img
-                src={"/footer.jpg"}
+                src={"https://arozjewelry.com/themes/Arozjewelry_2/assets/img/home/gravure_image_2.jpeg"}
                 alt=""
                 className="h-[400px] w-full object-cover"
                 ref={ref}
@@ -111,17 +111,17 @@ export default function Footer() {
             <div className="flex lg:flex-row flex-col lg:items-center lg:gap-[1.5rem] gap-[.5rem] lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">
 
               <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
-              <div >Terms + Conditions</div>
+              <div className="antarctica uppercase font-[200]">Terms + Conditions</div>
                </FadeContent>
 
               <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
-                <div>Privacy Policy</div>
+                <div className="antarctica uppercase font-[200]">Privacy Policy</div>
                </FadeContent>
             </div>
 
             {/* <div id="footer-text" className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© Chi Luxury 2024.</div> */}
             <FadeContent duration={1000} easing="ease-out" initialOpacity={0}>
-                <div className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] font-semibold uppercase manrope">© VELOURA 2024.</div>
+                <div className="lg:text-[1rem] text-[.9rem] tracking-[.2rem] antarctica uppercase font-[200]">© Sparké 2024.</div>
              </FadeContent>
 
           </div>

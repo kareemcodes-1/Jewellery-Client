@@ -2,7 +2,7 @@
 import { useEffect } from 'react'
 import Layout from '@/layout'
 import { useStore } from '../store/store'
-import { formatCurrency } from '../lib/formatCurrency';
+import formatCurrency from '../utils/formatCurrency';
 import Lenis from "lenis";
 import 'lenis/dist/lenis.css'
 
